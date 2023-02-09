@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS fourm_db;
+
+CREATE DATABASE fourm_db;
