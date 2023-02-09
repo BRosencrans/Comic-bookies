@@ -5,19 +5,27 @@ class Post extends Model {}
 
 Post.init({
   //sets up the post table
-  username: DataTypes.STRING,
+  username:{
+    type: DataTypes.STRING,
   references: {
     model: 'User',
     key: 'username'
-  },
+  }},
   title: {
-    type: VARCHAR,
+    type:  DataTypes.STRING,
     allowNull: false},
+    validate:{
+      len:[4]
+  },
   text: {
-    type: VARCHAR,
-    allowNull: false},
-    },
-    //add media share
+    type:  DataTypes.STRING,
+    allowNull: false,
+    validate:{
+      len:[4]
+  }}
+   //add media share
+},
+   
     {
       sequelize,
     }

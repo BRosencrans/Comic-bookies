@@ -15,6 +15,7 @@ Comment.init({
         key:true,
         references:{
             model:'Post',
+            key: 'id'
         }
     },
     userName:{
