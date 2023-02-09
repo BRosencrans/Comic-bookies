@@ -7,17 +7,35 @@ Comment.init({
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autonIncrement: true
+        autoIncrement: true
 
     },
-    post_id:{
-        
+    postId:{
+        type: DataTypes.INTEGER,
+        key:true,
+        references:{
+            model:'Post',
+        }
+    },
+    userName:{
+        type:DataTypes.STRING,
+        references: {
+            model: 'User',
+            key: 'userName'
     }
-})
+    },
+    comment:{
+        type:DataTypes.STRING,
+        allowNull:false,
+        validate:{
+            len:[10,100]
+        }
+    },
+},{
+        sequelize
+    }
 
+  
+);
 
-
-// Pk id int AI
-// post id fk ref postid
-// username fk ref username
-// comment VARCHAR
+module.exports = Comment;
