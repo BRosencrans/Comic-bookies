@@ -11,12 +11,13 @@ Post.init({
     key: 'username'
   },
   title: {
-    type: VARCHAR ,
+    type: VARCHAR,
     allowNull: false},
   text: {
-    type: DataTypes.TEXT,
+    type: VARCHAR,
     allowNull: false},
     },
+    //add media share
     {
       sequelize,
     }
