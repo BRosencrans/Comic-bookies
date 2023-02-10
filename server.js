@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-//const allRoutes = require('./routes');
+const allRoutes = require('./controllers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -34,7 +34,7 @@ app.use(express.json());
 //app.engine('handlebars', hbs.engine);
 //app.set('view engine', 'handlebars');
 
-//app.use('/',allRoutes);
+app.use('/',allRoutes);
 //app.get("/sessions",(req,res)=>{
    // res.json(req.session)
 //})
