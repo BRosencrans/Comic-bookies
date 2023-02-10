@@ -18,7 +18,7 @@ User.init({
         type:DataTypes.STRING,
         allowNull:false,
         validate:{
-            len:[8,14]
+            len:[8]
         }
     },
     userName:{
