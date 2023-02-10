@@ -6,25 +6,31 @@ const seed = async()=>{
     const users = await User.bulkCreate([
         {
             email:'yaycomics@yay.com',
-            password:'bookies'
+            password:'bookies',
+            userName: 'HwrdtheDuck',
+            user_id:1
         },
         {
             email:'welove@comicbooks',
-            password:'everybodyshouldreadcomicbooks'
+            password:'everybodyshouldreadcomicbooks',
+            userName: 'NotSuperman',
+            user_id:2
         }
     ],{
         individualHooks:true
     })
 
     const post= await Post.bulkCreate([
-        {
-            post:'must read commic book',
-            UserId:3
+        {title: "thoughts?",
+            text:'the best place to read comics is in an ice palace',
+            user_id:2,
+            userName: 'NotSuperman'
 
         },
-        {
-            post:'long live comic bookies',
-            UserId:1
+        {title: "best movie eveeer",
+            text:"when's the new howard the duck movie coming out?",
+            user_id:1,
+            userName: 'HwrdtheDuck'
         }
     ],{
         individualHooks:true
@@ -33,11 +39,14 @@ const seed = async()=>{
     const comment= await Comment.bulkCreate([
         {
             comment:'better than batman',
-            UserId:3
+            user_id:2,
+            post_id: 1
         },
         {
             comment:'batmans nothing with out robbin',
-            UserId:1
+            user_id:1,
+            post_id:2
+
         }
     ])
     process.exit(1)
