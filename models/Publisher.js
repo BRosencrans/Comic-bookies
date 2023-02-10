@@ -1,26 +1,27 @@
-const {Model, Datatypes} = require('sequelize');
 const sequelize = require('../config/connection');
+const {Model, DataTypes} = require('sequelize');
 
 class Publisher extends Model {}
 
 Publisher.init({
 
-    brand:{
-        type:Datatypes.STRING,
+    name:{
+        type: DataTypes.STRING,
         allowNull:false,
         validate:{
             isAlpha:true
         }
     },
     reader:{
-        type:Datatypes.STRING,
+        type: DataTypes.STRING,
+        allowNull:true,
         refernces:{
             Model:'User',
             Key:'userName'
         }
     }
 },{
-    sequelize
+    sequelize,
 })
 
 module.exports = Publisher
