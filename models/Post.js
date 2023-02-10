@@ -13,18 +13,18 @@ Post.init({
   }},
   title: {
     type:  DataTypes.STRING,
-    allowNull: false},
-    validate:{
-      len:[4]
+    allowNull: false,
+    // validate:{
+      // len:[4]
   },
   text: {
     type:  DataTypes.STRING,
     allowNull: false,
-    validate:{
-      len:[4]
-  }}
+    // validate:{
+      // len:[4]
+}},
    //add media share
-},
+
    
     {
       sequelize,
