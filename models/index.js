@@ -11,6 +11,7 @@ User.hasMany(Comment, {
     foreignKey: 'userName',
     onDelete: "cascade"
 });
+
 User.hasMany(Publisher, {
     foreignKey: 'userName'
 })
@@ -34,4 +35,4 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: "cascade"
 })
-module.exports = { User, Post, Comment, Publisher };
+module.exports = { User, Post, Comment, Publisher};
