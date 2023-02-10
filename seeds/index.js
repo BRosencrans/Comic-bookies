@@ -39,13 +39,13 @@ const seed = async()=>{
     const comment= await Comment.bulkCreate([
         {
             comment:'better than batman',
-            user_id:2,
-            post_id: 1
+            post_id: 1,
+            userName: 'HwrdtheDuck'
         },
         {
             comment:'batmans nothing with out robbin',
-            user_id:1,
-            post_id:2
+            post_id:2,
+            userName: 'NotSuperman'
 
         }
     ])

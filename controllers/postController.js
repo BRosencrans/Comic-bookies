@@ -7,13 +7,9 @@ const {User, Post, Comment} = require("../models");
 router.get("/", (req, res) => {
    //finds all posts and attached comments
     Post.findAll({
-    attributes: ['id','title','content'],
-    include:[{model: User,
-    attributes: ['username']},
+    include:[
     {model: Comment,
-    attributes: ['id', 'comment_text', 'post_id', 'user_id',],
-    include:{ model: User,
-    attributes: ['username']}
+    attributes: ['id','post_id','userName','comment']
     }]
     })
     .then(allPosts => res.json(allPosts))
@@ -25,14 +21,10 @@ router.get("/", (req, res) => {
 
 router.get('/:id', (req, res) => {
     //finds one post and attached comments
-    Post.findOne({ where: {id: req.params.id },
-    attributes: ['id','content','title',],
-    include: [{ model: User,
-    attributes: ['username']},
+   Post.findByPk(req.params.id,{
+    include: [
     {model: Comment,
-    attributes: ['id', 'comment_text', 'post_id', 'user_id',],
-    include: {model: User,
-     attributes: ['username']}
+    attributes: ['id','post_id','userName','comment'],
     }]
     })
     .then(onePost => {
@@ -51,8 +43,9 @@ router.post('/', (req, res) => {
    //creates new post
     Post.create({
     title: req.body.title,
-    content: req.body.content,
-    user_id: req.session.user_id})
+    userName: req.body.userName,
+    text: req.body.text,
+    user_id: req.body.user_id})
     .then(newPost => res.json(newPost))
     .catch(err => {
     console.log(err);

@@ -4,7 +4,12 @@ const {User, Post, Comment} = require('../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req,res)=>{
-    Comment.findAll().then(commentData=>{
+    Comment.findAll({
+        include:[
+        {model: Post,
+        attributes: ['id','userName','title','text']
+        }]
+        }).then(commentData=>{
         res.json(commentData)
     }).catch(err=>{
         console.log(err);
