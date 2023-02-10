@@ -1,6 +1,5 @@
-const sequelize = require('../config/connection')
-const{User,Post,Comment,Publisher}= require('../models')
-
+const sequelize =require('../config/connection')
+const{User,Post,Comment, Publisher}= require('../models')
 const seed = async()=>{
     await sequelize.sync({force:true});
     const users = await User.bulkCreate([
@@ -19,13 +18,11 @@ const seed = async()=>{
     ],{
         individualHooks:true
     })
-
     const post= await Post.bulkCreate([
         {title: "thoughts?",
             text:'the best place to read comics is in an ice palace',
             user_id:2,
             userName: 'NotSuperman'
-
         },
         {title: "best movie eveeer",
             text:"when's the new howard the duck movie coming out?",
@@ -35,7 +32,6 @@ const seed = async()=>{
     ],{
         individualHooks:true
     })
-
     const comment= await Comment.bulkCreate([
         {
             comment:'better than batman',
@@ -46,7 +42,6 @@ const seed = async()=>{
             comment:'batmans nothing with out robbin',
             post_id:2,
             userName: 'NotSuperman'
-
         }
     ])
     const publisher = await Publisher.bulkCreate([
