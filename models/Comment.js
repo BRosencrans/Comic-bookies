@@ -10,7 +10,7 @@ Comment.init({
         autoIncrement: true
 
     },
-    postId:{
+    post_id:{
         type: DataTypes.INTEGER,
         key:true,
         references:{

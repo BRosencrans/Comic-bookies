@@ -12,17 +12,17 @@ const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
 const {} = require('./models');
 
-// const sess = {
-  //   secret: 'process.env.SESSION_SECRET',
-  //   cookie: {},
-  //   resave: false,
-   //  saveUninitialized: true,
-   //  store: new SequelizeStore({
-   //      db: sequelize
-   //  })
-//};
+const sess = {
+  secret: 'process.env.SESSION_SECRET',
+   cookie: {},
+    resave: false,
+     saveUninitialized: true,
+    store: new SequelizeStore({
+         db: sequelize
+     })
+};
 
- //app.use(session(sess));
+ app.use(session(sess));
 // // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

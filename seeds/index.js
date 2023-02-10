@@ -33,6 +33,14 @@ const seed = async()=>{
     const comment= await Comment.bulkCreate([
         {
             comment:'better than batman',
+
+            post_id: 1,
+            userName: 'HwrdtheDuck'
+        },
+        {
+            comment:'batmans nothing with out robbin',
+            post_id:2,
+            userName: 'NotSuperman'
             UserId:3
         },
         {
@@ -92,10 +100,9 @@ const seed = async()=>{
         },{
             name:'Verotik'
         },{
-            name:'Milestone'
+
         }
+
     ])
     process.exit(1)
 }
-
-seed();
