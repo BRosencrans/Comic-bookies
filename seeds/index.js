@@ -44,61 +44,7 @@ const seed = async()=>{
             userName: 'NotSuperman'
         }
     ])
-    const publisher = await Publisher.bulkCreate([
-        {
-            name:'DC Comics'
-        },{
-            name:"Marvel"
-        },{
-            name:"Dark Horse Comics"
-        },{
-            name:"Archie Comics"
-        },{
-            name:"Gold Key"
-        },{
-            name:"Heavy Metal"
-        },{
-            name:"Fiction house"
-        },{
-            name:"Quality Comics"
-        },{
-            name:'Fox Comics'
-        },{
-            name:"Ace Magazines"
-        },{
-            name:"Fawcett Publications"
-        },{
-            name:"Charlton"
-        },{
-            name:"Atlas Comics"
-        },{
-            name:"Image"
-        },{
-            name:'Max Comics'
-        },{
-            name:'Aircel Publishing'
-        },{
-            name:'Crossgen'
-        },{
-            name:'Eros Comix'
-        },{
-            name:"America's Best Comics"
-        },{
-            name:'Amerotica'
-        },{
-            name:'Avatar Press'
-        },{
-            name:'Tangent Comics'
-        },{
-            name:'Eurotica'
-        },{
-            name:'Wildstorm'
-        },{
-            name:'Verotik'
-        },{
-            name:'Milestone'
-        }
-    ])
+
    
     process.exit(1)
 }
