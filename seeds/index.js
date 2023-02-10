@@ -93,8 +93,6 @@ const seed = async()=>{
             name:'Verotik'
         },{
             name:'Milestone'
-        },{
-            
         }
     ])
     process.exit(1)
