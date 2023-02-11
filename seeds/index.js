@@ -48,7 +48,6 @@ const seed = async()=>{
    
     process.exit(1)
 }
-
 const rawCharacterData = require("./characters.json")
 
 const trimmedCharacterData = rawCharacterData.map((character) => {
@@ -66,7 +65,20 @@ const filteredCharacterData = trimmedCharacterData.filter((character)=>{
     }
     return flag
 })
+
+const rawPublishersData = require("./publishers.json")
+
+const trimmedPublishersData = rawPublishersData.map((publisher) => {
+    return {name:publisher.name,
+        deck:publisher.deck,
+        description:publisher.description,
+       
+    }
+})
+
+console.log( trimmedPublishersData)
 console.log(filteredCharacterData)
+
 // seed();
 
 
