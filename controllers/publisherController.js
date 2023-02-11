@@ -12,7 +12,6 @@ router.get('/', (req,res)=>{
 })
 router.get('/:id', (req,res)=>{
     Publisher.findByPk(req.params.id,{
-        include:[User]
     }).then(bookData=>{
         res.json(bookData)
     }).catch(err=>{

@@ -7,14 +7,14 @@ Publisher.init({
 
     name:{
         type: DataTypes.STRING,
-        allowNull:false,    
+        allowNull:true,    
     },
    deck:{
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull:true,
     },
     description:{
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull:true,
     }
 },{
