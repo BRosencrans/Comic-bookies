@@ -93,8 +93,21 @@ const trimmedSeriesData =  rawSeriesData.map((series)=>{
 })
 
 
+
+const rawVolumesData = require("./volumes.json")
+
+const trimmedVolumesData = rawVolumesData.map((volumes) => {
+    return {name:volumes.name,
+        //publisher_name:volumes.publisher.name,
+       first_issue_name:volumes.first_issue.issue_name,
+        //last_issue_name:volumes.last.issue_name,
+        last_issue_number_number:volumes.last_issue.issue_number,
+        count_of_issues:volumes.count_of_issues
+    }
+})
 console.log(trimmedSeriesData)
-// console.log( trimmedPublishersData)
+//console.log(trimmedVolumesData)
+// console.log(trimmedPublishersData)
 // console.log(filteredCharacterData)
 
 // seed();
