@@ -4,7 +4,9 @@ const {User, Post, Comment} = require('../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req, res)=>{
-    User.findAll().then(userData=>{
+    User.findAll({
+        attributes:{exclude: ['password']}
+        }).then(userData=>{
         res.json(userData)
     }).catch(err=>{
         console.log(err);

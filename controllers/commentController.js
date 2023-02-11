@@ -4,7 +4,12 @@ const {User, Post, Comment} = require('../models');
 const bcrypt = require('bcrypt');
 
 router.get('/', (req,res)=>{
-    Comment.findAll().then(commentData=>{
+    Comment.findAll({
+        include:[
+        {model: Post,
+        attributes: ['id','userName','title','text']
+        }]
+        }).then(commentData=>{
         res.json(commentData)
     }).catch(err=>{
         console.log(err);
@@ -46,14 +51,21 @@ router.delete('/:id', (req,res)=>{
     Comment.findByPk(req.params.id).then(commentData=>{
         if(!commentData){
             return res.status(404).json({msg:"no such comment"})
-        }else(postData.userId!==req.session.userId){
+        }else if(postData.userId!==req.session.userId){
             return res.status(403).json({msg:"not your post, what are you doing?"})
         }
-        Comment.destroy({
-            where:{
-                id:req.params.id
-            }
-        })
+    Comment.destroy({
+        where:{
+            id:req.params.id,
+        }
+    }).then(commentData=>{
+        res.json(commentData)
+    }).catch(err=>{
+        console.log(err);
+        res.status(500).json({msg:'aww shucks!',err})
     })
-    }
-)
+        })
+})
+module.exports = router;
+
+
