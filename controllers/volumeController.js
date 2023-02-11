@@ -19,4 +19,4 @@ router.get('/:id', (req,res)=>{
     })
 })
 
-module.exports = Volume
+module.exports = router
