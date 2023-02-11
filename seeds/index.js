@@ -76,7 +76,25 @@ const trimmedPublishersData = rawPublishersData.map((publisher) => {
     }
 })
 
-console.log( trimmedPublishersData)
+const rawSeriesData = require('./series.json')
+const trimmedSeriesData =  rawSeriesData.map((series)=>{
+    return {
+        name:series.name,
+        aliases:series.aliases,
+        count_of_episodes:series.count_of_episodes,
+        first_episode_title:series.first_episode.name,
+        last_episode_title:series.last_episode.name,
+        production:series.publisher,
+        // needs to be publisher.name, but is returning null
+        // ask about this with a TA when possible, syntax may be wrong
+        deck:series.deck,
+        start_year:series.start_year
+    }
+})
+
+
+console.log(trimmedSeriesData)
+// console.log( trimmedPublishersData)
 // console.log(filteredCharacterData)
 
 // seed();

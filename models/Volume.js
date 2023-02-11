@@ -2,9 +2,9 @@
 const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Volumes extends Model {}
+class Volume extends Model {}
 
-Volumes.init({name:{
+Volume.init({name:{
     type:DataTypes.STRING,
     allowNull:false,      
 },
@@ -33,4 +33,4 @@ count_of_issues:{
 }, {sequelize,
 freezeTableName: true,
 })
-module.exports=Volumes
+module.exports=Volume
