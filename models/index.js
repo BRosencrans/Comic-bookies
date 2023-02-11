@@ -43,14 +43,14 @@ Character.belongsTo(Publisher)
 
 Volume.belongsTo(Publisher)
 
-Publisher.belongsToMany(User,{
-    through:'LikedPublishers',
-    as:'LikedBy'
-})
-User.belongsToMany(Publisher,{
-    through:'LikedPublishers',
-    as:'LikedBy'
-})
+// Publisher.belongsToMany(User,{
+//     through:'LikedPublishers',
+//     as:'LikedBy'
+// })
+// User.belongsToMany(Publisher,{
+//     through:'LikedPublishers',
+//     as:'LikedBy'
+// })
 Volume.belongsToMany(User, {
     through:'LikedVolumes',
     as: 'ReadBy'
@@ -67,12 +67,12 @@ User.belongsToMany(Character,{
     through:'FavChars',
     as:'MyFavs'
 })
-Series.belongsToMany(User,{
-    through:'LikedShows',
-    as:'WatchedBy'
-})
-User.belongsToMany(Series,{
-    through:'LikedShows',
-    as:'WatchedBy'
-})
-module.exports = { User, Post, Comment, Publisher, Character, Series, Volume};
+// Series.belongsToMany(User,{
+//     through:'LikedShows',
+//     as:'WatchedBy'
+// })
+// User.belongsToMany(Series,{
+//     through:'LikedShows',
+//     as:'WatchedBy'
+// })
+module.exports = { User, Post, Comment, Publisher, Character, Volume};
