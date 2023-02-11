@@ -16,4 +16,10 @@ router.use('/api/publishers', publisherRoutes);
 const characterRoutes = require('./characterController')
 router.use('/api/characters', characterRoutes);
 
+const seriesRoutes = require('./seriesController')
+router.use('/api/series', seriesRoutes);
+
+const volumeRoutes = require('./volumeController')
+router.use('/api/volumes', volumeRoutes);
+
 module.exports = router;
