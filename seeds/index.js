@@ -101,7 +101,26 @@ const seed = async()=>{
     ])
     process.exit(1)
 }
-seed();
+
+const rawCharacterData = require("./characters.json")
+
+const trimmedCharacterData = rawCharacterData.map((character) => {
+    return {name:character.name,
+        aliases:character.aliases,
+        first_appeared_in_issue_number:character.first_appeared_in_issue.issue_number,
+        first_appeared_in_issue_name:character.first_appeared_in_issue.name,
+        count_of_issue_appearances:character.count_of_issue_appearances
+    }
+})
+const filteredCharacterData = trimmedCharacterData.filter((character)=>{
+    let flag = true
+    if(character.name.length === 7 && character.name[3]=== '-' || character.name.length === 6 && character.name[3] === '-' || character.name.length === 6 && character.name[2] === '-'){
+        flag = false
+    }
+    return flag
+})
+console.log(filteredCharacterData)
+// seed();
 
 
 
