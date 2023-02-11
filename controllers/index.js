@@ -9,6 +9,11 @@ router.use('/api/posts', postRoutes);
 
 const commentRoutes =  require('./commentController')
 router.use('/api/comments', commentRoutes);
+
 const publisherRoutes = require('./publisherController')
-router.use('/api/publishers', publisherRoutes)
+router.use('/api/publishers', publisherRoutes);
+
+const characterRoutes = require('./characterController')
+router.use('/api/characters', characterRoutes);
+
 module.exports = router;
