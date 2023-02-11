@@ -13,8 +13,10 @@ User.hasMany(Comment, {
 });
 
 User.hasMany(Publisher, {
-    foreignKey: 'userName'
-})
+    foreignKey: 'userName',
+    through:"reading",
+    as:'reader'
+});
 
 Post.belongsTo(User, {
     foreignKey: 'userName',

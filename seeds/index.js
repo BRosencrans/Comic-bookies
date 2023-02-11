@@ -48,8 +48,10 @@ const seed = async()=>{
    
     process.exit(1)
 }
-const rawPublisherData = 
-const trimmedPublisherData = rawPublisherData.map((character) => {
+
+const rawCharacterData = require("./characters.json")
+
+const trimmedCharacterData = rawCharacterData.map((character) => {
     return {name:character.name,
         aliases:character.aliases,
         first_appeared_in_issue_number:character.first_appeared_in_issue.issue_number,
@@ -59,10 +61,16 @@ const trimmedPublisherData = rawPublisherData.map((character) => {
 })
 const filteredCharacterData = trimmedCharacterData.filter((character)=>{
     let flag = true
-    if(character.name.length === 7 && character.name[3]=== '-' || character.name.length === 6 && character.name[3] === '-' ){
+    if(character.name.length === 7 && character.name[3]=== '-' || character.name.length === 6 && character.name[3] === '-' || character.name.length === 6 && character.name[2] === '-'){
         flag = false
     }
     return flag
 })
 console.log(filteredCharacterData)
-//seed();
+// seed();
+
+
+
+
+
+
