@@ -7,18 +7,15 @@ Publisher.init({
 
     name:{
         type: DataTypes.STRING,
-        allowNull:false,
-        validate:{
-            isAlpha:true
-        }
+        allowNull:false,    
     },
-    reader:{
+   deck:{
         type: DataTypes.STRING,
         allowNull:true,
-        refernces:{
-            Model:'User',
-            Key:'userName'
-        }
+    },
+    description:{
+        type: DataTypes.STRING,
+        allowNull:true,
     }
 },{
     sequelize,
