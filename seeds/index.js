@@ -77,7 +77,7 @@ const trimmedPublishersData = rawPublishersData.map((publisher) => {
 })
 
 console.log( trimmedPublishersData)
-console.log(filteredCharacterData)
+// console.log(filteredCharacterData)
 
 // seed();
 

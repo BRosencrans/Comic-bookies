@@ -12,11 +12,11 @@ User.hasMany(Comment, {
     onDelete: "cascade"
 });
 
-User.hasMany(Publisher, {
-    foreignKey: 'userName',
-    through:"reading",
-    as:'reader'
-});
+// User.hasMany(Publisher, {
+//     foreignKey: 'userName',
+//     through:"reading",
+//     as:'reader'
+// });
 
 Post.belongsTo(User, {
     foreignKey: 'userName',
