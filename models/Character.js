@@ -25,5 +25,5 @@ Character.init({
         allowNull:false
     }
 
-})
+},{sequelize})
 module.exports=Character
