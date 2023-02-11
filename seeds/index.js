@@ -1,5 +1,5 @@
 const sequelize =require('../config/connection')
-const{User,Post,Comment, Publisher}= require('../models')
+const{User,Post,Comment}= require('../models')
 const seed = async()=>{
     await sequelize.sync({force:true});
     const users = await User.bulkCreate([
@@ -44,64 +44,10 @@ const seed = async()=>{
             userName: 'NotSuperman'
         }
     ])
-    const publisher = await Publisher.bulkCreate([
-        {
-            name:'DC Comics'
-        },{
-            name:"Marvel"
-        },{
-            name:"Dark Horse Comics"
-        },{
-            name:"Archie Comics"
-        },{
-            name:"Gold Key"
-        },{
-            name:"Heavy Metal"
-        },{
-            name:"Fiction house"
-        },{
-            name:"Quality Comics"
-        },{
-            name:'Fox Comics'
-        },{
-            name:"Ace Magazines"
-        },{
-            name:"Fawcett Publications"
-        },{
-            name:"Charlton"
-        },{
-            name:"Atlas Comics"
-        },{
-            name:"Image"
-        },{
-            name:'Max Comics'
-        },{
-            name:'Aircel Publishing'
-        },{
-            name:'Crossgen'
-        },{
-            name:'Eros Comix'
-        },{
-            name:"America's Best Comics"
-        },{
-            name:'Amerotica'
-        },{
-            name:'Avatar Press'
-        },{
-            name:'Tangent Comics'
-        },{
-            name:'Eurotica'
-        },{
-            name:'Wildstorm'
-        },{
-            name:'Verotik'
-        },{
-            name:'Milestone'
-        }
-    ])
+
+   
     process.exit(1)
 }
-
 const rawCharacterData = require("./characters.json")
 
 const trimmedCharacterData = rawCharacterData.map((character) => {
@@ -119,9 +65,21 @@ const filteredCharacterData = trimmedCharacterData.filter((character)=>{
     }
     return flag
 })
-console.log(filteredCharacterData)
-// seed();
 
+const rawPublishersData = require("./publishers.json")
+
+const trimmedPublishersData = rawPublishersData.map((publisher) => {
+    return {name:publisher.name,
+        deck:publisher.deck,
+        description:publisher.description,
+       
+    }
+})
+
+console.log( trimmedPublishersData)
+console.log(filteredCharacterData)
+
+// seed();
 
 
 
