@@ -46,8 +46,9 @@ router.post('/', (req, res) => {
     userName: req.body.userName,
     text: req.body.text,
     user_id: req.body.user_id})
-    .then(newPost => res.json(newPost))
-    .catch(err => {
+    .then(newPost => {
+        res.json(newPost)
+    }).catch(err => {
     console.log(err);
     res.status(500).json(err);
     });
