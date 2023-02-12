@@ -4,10 +4,7 @@ const router= express.Router();
 const {User,Post, Comment,Character,Series,Publisher,Volume} = require('../models');
 
 router.get("/",(req,res)=>{
-    res.render("home"){
-        isLoggedIn:req.session.logged
-        userId:req.session.userId,rmSync
-    }
+    res.render("home")
 })
 
 // // login page
