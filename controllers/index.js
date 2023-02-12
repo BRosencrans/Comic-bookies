@@ -23,6 +23,6 @@ const volumeRoutes = require('./volumeController')
 router.use('/api/volumes', volumeRoutes);
 
 const frontEndRoutes= require("./frontendController");
-router.use("/frontEndRoutes")
+router.use("/", frontEndRoutes);
 
 module.exports = router;

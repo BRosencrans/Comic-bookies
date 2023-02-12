@@ -15,7 +15,10 @@ router.get('/', (req, res)=>{
 })
 router.get('/:id', (req,res)=>{
     User.findByPk(req.params.id,{
-        include:[Post]
+        include:{
+            model:Post,
+            as: 'Post'
+        }
     }).then(userData=>{
         res.json(userData)
     }).catch(err=>{

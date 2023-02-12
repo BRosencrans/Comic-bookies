@@ -8,46 +8,66 @@ const Volume = require('./Volume');
 
 
 User.hasMany(Post, {
+    as:'Post',
     foreignKey: 'userName'
 });
 
 User.hasMany(Comment, {
+    as: "Comment",
     foreignKey: 'userName',
     onDelete: "cascade"
 });
 
 Post.belongsTo(User, {
+    as: 'User',
     foreignKey: 'userName',
     onDelete: "cascade"
 });
 
 Comment.belongsTo(User, {
+    as: 'User',
     foreignKey: 'userName',
     onDelete: "cascade"
 });
 
 Comment.belongsTo(Post, {
+    as: 'Post',
     foreignKey: 'post_id',
     onDelete: "cascade"
 });
 
 Post.hasMany(Comment, {
+    as: 'Comment',
     foreignKey: 'post_id',
     onDelete: "cascade"
 })
-Publisher.hasMany(Character)
+Publisher.hasMany(Character, {
+    as: "Character",
+    foreignKey: 'hero'
+})
 
-Publisher.hasMany(Volume)
+Publisher.hasMany(Volume, {
+    as:'Volume',
+    foreignKey: 'comic'
+})
 
-Character.belongsTo(Publisher)
+Character.belongsTo(Publisher, {
+    as:'Publisher',
+    foreignKey:"hero"
+})
 
-Volume.belongsTo(Publisher)
+Volume.belongsTo(Publisher, {
+    as: 'Publisher',
+    foreignKey: 'comic'
+})
 
 Publisher.belongsToMany(User,{
+    as: 'User',
     through:'LikedPublishers',
     as:'LikedBy'
 })
 User.belongsToMany(Publisher,{
+    as: 'Publisher',
     through:'LikedPublishers',
     as:'LikedBy'
 })
@@ -68,6 +88,7 @@ User.belongsToMany(Character,{
     as:'MyFavs'
 })
 Series.belongsToMany(User,{
+    
     through:'LikedShows',
     as:'WatchedBy'
 })
