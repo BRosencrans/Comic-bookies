@@ -6,25 +6,34 @@ const rawSeriesData = require('./series.json')
 const rawVolumeData = require("./volume.json")
 
 const trimmedCharacterData = rawCharacterData.map((character) => {
-    return {name:character.name,
-        aliases:character.aliases,
-        first_appeared_in_issue_number:character.first_appeared_in_issue.issue_number,
-        first_appeared_in_issue_name:character.first_appeared_in_issue.name,
-        count_of_issue_appearances:character.count_of_issue_appearances
+    return {
+        name: character.name,
+        aliases: character.aliases,
+        first_appearance_in_issue_number: character.first_appeared_in_issue && character.first_appeared_in_issue.issue_number,
+        first_appearance_in_issue_name: character.first_appeared_in_issue && character.first_appeared_in_issue.name,
+        count_of_issue_appearances: character.count_of_issue_appearances
+    };
+});
+const filteredCharacterData1 = trimmedCharacterData.filter((character) => {
+    return character.name != null;
+});
+
+const filteredCharacterData2 = filteredCharacterData1.filter((character) => {
+    let flag = true;
+    if (character.name && 
+        ((character.name.length === 7 && character.name[3] === '-') || 
+         (character.name.length === 6 && character.name[3] === '-') || 
+         (character.name.length === 6 && character.name[2] === '-'))) {
+        flag = false;
     }
-})
-const filteredCharacterData = trimmedCharacterData.filter((character)=>{
-    let flag = true
-    if(character.name.length === 7 && character.name[3]=== '-' || character.name.length === 6 && character.name[3] === '-' || character.name.length === 6 && character.name[2] === '-'){
-        flag = false
-    }
-    return flag
-})
+    return flag;
+});
+
 
 const trimmedPublishersData = rawPublishersData.map((publisher) => {
     return {name:publisher.name,
         deck:publisher.deck,
-        // description:publisher.description,
+         description:publisher.description,
        
     }
 })
@@ -95,7 +104,7 @@ const seed = async()=>{
     ])
 
     const publishers = await Publisher.bulkCreate(filteredPublisherData);
-    const characters = await Character.bulkCreate(filteredCharacterData);
+    const characters = await Character.bulkCreate(filteredCharacterData2);
     const series = await Series.bulkCreate(trimmedSeriesData);
     process.exit(1)
 }
@@ -115,7 +124,7 @@ console.log (trimmedVolumeData)
 // console.log( trimmedPublishersData)
 // console.log(filteredCharacterData)
 
-//seed();
+seed();
 
 
 
