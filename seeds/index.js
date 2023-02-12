@@ -1,10 +1,32 @@
 const sequelize =require('../config/connection')
-const{User,Post,Comment,Character,Publisher,Series, Volumes}= require('../models')
+const{User,Post,Comment,Character,Publisher,Series, Volume}= require('../models')
 const rawCharacterData = require("./characters.json")
 const rawPublishersData = require("./publishers.json")
 const rawSeriesData = require('./series.json')
 const rawVolumesData = require("./volumes.json")
 
+const filteredVolumesData1 = rawVolumesData.filter((volumes) => {
+    return volumes.first_issue != null && volumes.first_issue.name != null;
+});
+// const filteredVolumesData2 = filteredVolumesData1.filter((volumes)=>{
+//     return volumes.first_issue.name != null;
+// })
+const filteredVolumesData2 = filteredVolumesData1.filter((volumes)=>{
+    return volumes.last_issue != null && volumes.last_issue.name != null;
+})
+// const filteredVolumesData4 = filteredVolumesData3.filter((volumes)=>{
+//     return volumes.last_issue.name != null;
+// })
+
+const trimmedVolumesData = filteredVolumesData2.map((volumes) => {
+    return {name:volumes.name,
+        publisher_name:volumes.publisher.name,
+      first_issue_name:volumes.first_issue.name,
+       last_issue_name:volumes.last_issue.name,
+       last_issue_number:volumes.last_issue.issue_number,
+        count_of_issues:volumes.count_of_issues
+    }
+});
 const trimmedCharacterData = rawCharacterData.map((character) => {
     return {
         name: character.name,
@@ -106,28 +128,16 @@ const seed = async()=>{
     const publishers = await Publisher.bulkCreate(filteredPublisherData);
     const characters = await Character.bulkCreate(filteredCharacterData2);
     const series = await Series.bulkCreate(trimmedSeriesData);
+    const volumes = await Volume.bulkCreate(trimmedVolumesData);
     process.exit(1)
 }
 
 
-const trimmedVolumesData = rawVolumesData.map((volumes) => {
-    return {name:volumes.name,
-        //publisher_name:volumes.publisher.name,
-      first_issue_name:volumes.first_issue.name,
-       // last_issue_name:volumes.last_issue.name,
-       // last_issue_number:volumes.last_issue.issue_number,
-        count_of_issues:volumes.count_of_issues
-    }
-})
-const filteredVolumesData1 = trimmedVolumesData.filter((volumes) => {
-    return volumes.first_issue.name != null;
-});
-
-console.log (filteredVolumesData1)
+// console.log (trimmedVolumesData)
 // console.log( trimmedPublishersData)
 // console.log(filteredCharacterData)
 
-//seed();
+seed();
 
 
 
