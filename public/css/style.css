@@ -15,13 +15,14 @@ header {
     display: flex;
     justify-content: space-around;
     background-color: darkslategrey;
-    font-size: larger;
-    /* background: */
+    font-size: larger;   
+}
+header a{
+    color:aliceblue
 }
 
 main {
     min-height: 80vh;
-    /* background: */
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
