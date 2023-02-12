@@ -1,6 +1,7 @@
 const express= require('express');
 const router= express.Router();
-const {User,Post, Comment,Character,Series,Publisher,Volume} = require('../models');
+const {User, Post, Comment, Publisher} = require('../models');
+
 
 router.get("/",(req,res)=>{
     Post.findAll({
@@ -42,4 +43,18 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
-module.exports = router;
+// // login page
+// router.get("/login",(req,res)=>{
+//     if(req.session.loggedIn){
+//         return res.redirect("/")
+//     }
+//     res.render("login",{
+//         isLoggedIn:req.session.loggedIn,
+//         userId:req.session.userId,
+//     })
+// })
+
+
+
+module.exports= router;
+
