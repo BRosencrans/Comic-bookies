@@ -38,20 +38,20 @@ const trimmedPublishersData = rawPublishersData.map((publisher) => {
        
     }
 })
-const filteredPublisherData = trimmedPublishersData.filter((publisher)=>{
-    let flag = true
-    if (publisher.name === null){
-        flag = false
-    } return flag
+const filteredPublisherData = trimmedPublishersData.filter((publisher) => {
+    return publisher.name != null;
+});
+const filteredSeriesData = rawSeriesData.filter((series)=>{
+    return series.publisher != null;
 })
-const trimmedSeriesData =  rawSeriesData.map((series)=>{
+const trimmedSeriesData =  filteredSeriesData.map((series)=>{
     return {
         name:series.name,
         aliases:series.aliases,
         count_of_episodes:series.count_of_episodes,
         first_episode_title:series.first_episode.name,
         last_episode_title:series.last_episode.name,
-        // production:series.publisher,
+        production:series.publisher.name,
         // needs to be publisher.name, but is returning null
         // ask about this with a TA when possible, syntax may be wrong
         deck:series.deck,
