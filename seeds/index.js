@@ -21,7 +21,6 @@ const filteredCharacterData = trimmedCharacterData.filter((character)=>{
     return flag
 })
 
-
 const trimmedPublishersData = rawPublishersData.map((publisher) => {
     return {name:publisher.name,
         deck:publisher.deck,
@@ -107,17 +106,12 @@ const trimmedVolumeData = rawVolumeData.map((volume) => {
         //publisher_name:volume.publisher_name,
        //first_issue_name:volume.first_issue.name,
        // last_issue_name:volume.last_issue.name,
-        last_issue_number:volume.last_issue.issue_number,
+       // last_issue_number:volume.last_issue.issue_number,
         count_of_issues:volume.count_of_issues
     }
 })
-const filteredVolumeData = trimmedVolumeData.filter((volume)=>{
-    let flag = true
-    if (volume.first_issue.name === null){
-        flag = false
-    } return flag
-})
-console.log (filteredVolumeData)
+
+console.log (trimmedVolumeData)
 // console.log( trimmedPublishersData)
 // console.log(filteredCharacterData)
 

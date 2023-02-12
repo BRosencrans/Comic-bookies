@@ -36,9 +36,9 @@ router.get('/:id', (req,res)=>{
     Character.create({
         name:req.params.name,
         aliases:req.params.aliases,
-        first_appearence_in_issue_number:req.params.first_appearence_in_issue_number,
-        first_appearence_in_issue_name:req.params.first_appearence_in_issue_name,
-        count_of_issue_appearences:req.params.count_of_issue_appearences
+        first_appearance_in_issue_number:req.params.first_appearance_in_issue_number,
+        first_appearance_in_issue_name:req.params.first_appearance_in_issue_name,
+        count_of_issue_appearances:req.params.count_of_issue_appearances
     }).then(newChar=>{
         res.json(newChar)
     }).catch(err=>{
