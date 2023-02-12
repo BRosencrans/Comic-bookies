@@ -28,6 +28,10 @@ User.init({
         validate:{
             isAlphanumeric:true
         }
+    }, 
+    bio:{
+        type:DataTypes.TEXT,
+        allowNull:false
     }
 },{
     sequelize,

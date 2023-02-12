@@ -4,14 +4,15 @@ const {User,Post, Comment,Character,Series,Publisher,Volume} = require('../model
 
 router.get("/",(req,res)=>{
     Post.findAll({
-        include:[User,Post,Comment,Publisher]
+        include:[User,Post,Comment]
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
         console.log('==============================')
         console.log(hbsPost)
         res.render("home",{
-            allPosts:hbsPosts
+            isLoggedIn:req.session.loggedIn,
+            userId:req.session.userId,
         })
     })
 })
@@ -30,7 +31,7 @@ router.get("/profile",(req,res)=>{
         return res.redirect("/login")
     }
     User.findByPk(req.session.userId,{
-        include:[Post,Comment,Publisher]
+        include:[Post,Comment]
     }).then(userdata=>{
         console.log(userdata)
         const hbsData = userdata.toJSON();
