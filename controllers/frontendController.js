@@ -5,7 +5,10 @@ const {User, Post, Comment, Publisher} = require('../models');
 
 router.get("/",(req,res)=>{
     Post.findAll({
-        include:[User,Post,Comment]
+        include:{
+            model:User,
+            as: 'User'
+        }
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
@@ -21,7 +24,10 @@ router.get("/login",(req,res)=>{
     if(req.session.loggedIn){
         return res.redirect('/')
     }
-    res.render("login",{}
+    res.render("login",{
+        isLoggedIn:req.session.loggedIn,
+        userId:req.session.userId,
+    }
     )
 })
 router.get("/signup",(req,res)=>{
