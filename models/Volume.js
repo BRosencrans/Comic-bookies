@@ -22,7 +22,7 @@ last_issue_name:{
     type:DataTypes.STRING,
     allowNull:false,
 },
-last_issue_issue_number:{
+last_issue_number:{
     type:DataTypes.INTEGER,
     allowNull:false
 },
