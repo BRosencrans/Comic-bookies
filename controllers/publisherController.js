@@ -1,23 +1,23 @@
 const express =  require('express');
 const router = express.Router();
-const {User,Post,Comment,Publisher} = require('../models');
+const {Publisher} = require('../models');
 
 router.get('/', (req,res)=>{
-    Publisher.findAll().then(bookData=>{
-        res.json(bookData)
+    Publisher.findAll().then(allPublishers=>{
+        res.json(allPublishers)
     }).catch(err=>{
-        console.log(err);
-        res.status(500).json({msg:"aww shucks!", err})
-    })
-})
-router.get('/:id', (req,res)=>{
-    Publisher.findByPk(req.params.id,{
-    }).then(bookData=>{
-        res.json(bookData)
-    }).catch(err=>{
-        console.log(err);
-        res.status(500).json({msg:"aww shucks!", err})
+        console.log(err)
+        res.status(500).json({msg:'aww shucks!'})
     })
 })
 
-module.exports = router
+router.get('/:id', (req,res)=>{
+    Publisher.findByPk({}).then(onePublisher=>{
+        res.json(onePublisher)
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({msg:'aww shucks!'})
+    })
+})
+
+module.exports = router;
