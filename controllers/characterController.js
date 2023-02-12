@@ -27,8 +27,8 @@ router.get('/:id', (req,res)=>{
     Character.create({
         name:req.params.name,
         aliases:req.params.aliases,
-        first_appearence_in_issue_number:req.params.first_appearence_in_issue_number,
-        first_appearence_in_issue_name:req.params.first_appearence_in_issue_name,
+        first_appearence_in_issue_number:req.params.first_appeared_in_issue_number,
+        first_appearence_in_issue_name:req.params.first_appeared_in_issue_name,
         count_of_issue_appearences:req.params.count_of_issue_appearences
     }).then(newChar=>{
         res.json(newChar)

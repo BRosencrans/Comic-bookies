@@ -18,7 +18,7 @@ Character.init({
     },
     first_appearance_in_issue_name:{
         type:DataTypes.STRING,
-        allowNull:true
+        allowNull:true,
     },
     count_of_issue_appearances:{
         type:DataTypes.INTEGER,
