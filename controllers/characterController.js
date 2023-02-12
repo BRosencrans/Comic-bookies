@@ -13,11 +13,13 @@ router.get('/', (req,res)=>{
     })
 })
 router.get('/:id', (req,res)=>{
-    Character.findByPk({}).then(findOne=>{
-        res.json(findOne)
+    Character.findByPk(req.params.id,{
+    }).then(oneChar=>{
+        res.json(oneChar)
     }).catch(err=>{
-        console.log(err)
-        res.status(500).json({msg:"aww shucks!"})
+        console.log(err);
+        res.status(500).json({msg:"aww shucks!", err})
     })
 })
+
 module.exports = router;
