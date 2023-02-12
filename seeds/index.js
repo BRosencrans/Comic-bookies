@@ -1,9 +1,9 @@
 const sequelize =require('../config/connection')
-const{User,Post,Comment,Character,Publisher,Series, Volume}= require('../models')
+const{User,Post,Comment,Character,Publisher,Series, Volumes}= require('../models')
 const rawCharacterData = require("./characters.json")
 const rawPublishersData = require("./publishers.json")
 const rawSeriesData = require('./series.json')
-const rawVolumeData = require("./volume.json")
+const rawVolumesData = require("./volumes.json")
 
 const trimmedCharacterData = rawCharacterData.map((character) => {
     return {
@@ -110,21 +110,24 @@ const seed = async()=>{
 }
 
 
-const trimmedVolumeData = rawVolumeData.map((volume) => {
-    return {name:volume.name,
-        //publisher_name:volume.publisher_name,
-       //first_issue_name:volume.first_issue.name,
-       // last_issue_name:volume.last_issue.name,
-       // last_issue_number:volume.last_issue.issue_number,
-        count_of_issues:volume.count_of_issues
+const trimmedVolumesData = rawVolumesData.map((volumes) => {
+    return {name:volumes.name,
+        //publisher_name:volumes.publisher.name,
+      first_issue_name:volumes.first_issue.name,
+       // last_issue_name:volumes.last_issue.name,
+       // last_issue_number:volumes.last_issue.issue_number,
+        count_of_issues:volumes.count_of_issues
     }
 })
+const filteredVolumesData1 = trimmedVolumesData.filter((volumes) => {
+    return volumes.first_issue.name != null;
+});
 
-console.log (trimmedVolumeData)
+console.log (filteredVolumesData1)
 // console.log( trimmedPublishersData)
 // console.log(filteredCharacterData)
 
-seed();
+//seed();
 
 
 
