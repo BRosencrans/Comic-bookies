@@ -14,11 +14,11 @@ Character.init({
     },
     first_appearance_in_issue_number:{
         type:DataTypes.STRING,
-        allowNull:false,
+        allowNull:true,
     },
     first_appearance_in_issue_name:{
         type:DataTypes.STRING,
-        allowNull:false
+        allowNull:true
     },
     count_of_issue_appearances:{
         type:DataTypes.INTEGER,

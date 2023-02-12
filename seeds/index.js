@@ -96,7 +96,7 @@ const seed = async()=>{
     ])
 
     const publishers = await Publisher.bulkCreate(filteredPublisherData);
-    // const characters = await Character.bulkCreate(filteredCharacterData);
+   const characters = await Character.bulkCreate(filteredCharacterData);
     
     process.exit(1)
 }
