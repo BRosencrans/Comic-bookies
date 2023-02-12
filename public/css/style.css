@@ -4,17 +4,43 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+body{
+    background-image: url('./old-comics.jpg');
 
-header,footer {
-    height: 15vh;
+}
+
+header {
+    border: solid 2px black;
+    height: 40px;
     display: flex;
     justify-content: space-around;
+    background-color: darkslategrey;
+    font-size: larger;
     /* background: */
 }
 
 main {
-    min-height: 70vh;
+    min-height: 80vh;
     /* background: */
-    width:80vw;
+    width:70vw;
     margin:0 auto;
+    border:solid black 2px;
+    background-color: aliceblue;
+}
+#welcome{
+    display: flex;
+    justify-content: center;
+    border: solid black 2px;
+    background-color:darkslateblue;
+    color:aliceblue;
+}
+#log-in{
+   text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#sign-up{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
 }
