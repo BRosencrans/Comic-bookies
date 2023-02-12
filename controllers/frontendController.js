@@ -1,7 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher} = require('./models');
-
+const {User,Post, Comment,Character,Series,Publisher,Volume} = require('../models');
 
 router.get("/",(req,res)=>{
     Post.findAll({
