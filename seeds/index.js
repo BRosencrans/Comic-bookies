@@ -8,22 +8,18 @@ const rawVolumesData = require("./volumes.json")
 const filteredVolumesData1 = rawVolumesData.filter((volumes) => {
     return volumes.first_issue != null && volumes.first_issue.name != null;
 });
-// const filteredVolumesData2 = filteredVolumesData1.filter((volumes)=>{
-//     return volumes.first_issue.name != null;
-// })
+
 const filteredVolumesData2 = filteredVolumesData1.filter((volumes)=>{
     return volumes.last_issue != null && volumes.last_issue.name != null;
 })
-// const filteredVolumesData4 = filteredVolumesData3.filter((volumes)=>{
-//     return volumes.last_issue.name != null;
-// })
+
 
 const trimmedVolumesData = filteredVolumesData2.map((volumes) => {
     return {name:volumes.name,
         publisher_name:volumes.publisher.name,
-      first_issue_name:volumes.first_issue.name,
-       last_issue_name:volumes.last_issue.name,
-       last_issue_number:volumes.last_issue.issue_number,
+        first_issue_name:volumes.first_issue.name,
+        last_issue_name:volumes.last_issue.name,
+        last_issue_number:volumes.last_issue.issue_number,
         count_of_issues:volumes.count_of_issues
     }
 });

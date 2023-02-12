@@ -17,7 +17,11 @@ router.get("/",(req,res)=>{
     })
 })
 router.get("/login",(req,res)=>{
-    res.render("login")
+    if(req.session.loggedIn){
+        return res.redirect('/')
+    }
+    res.render("login",{}
+    )
 })
 router.get("/signup",(req,res)=>{
     res.render("signup")
