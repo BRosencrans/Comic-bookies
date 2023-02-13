@@ -1,6 +1,6 @@
 const express =  require('express');
 const router = express.Router();
-const {Publisher} = require('../models');
+const {Publisher} = require('../../models');
 
 router.get('/', (req,res)=>{
     Publisher.findAll().then(allPublishers=>{

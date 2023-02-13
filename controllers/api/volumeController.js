@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {Volume, Publisher, Character} = require('../models');
+const {Volume, Publisher, Character} = require('../../models');
 
 router.get('/', (req, res)=>{
     Volume.findAll({}).then(allVolumes=>{
