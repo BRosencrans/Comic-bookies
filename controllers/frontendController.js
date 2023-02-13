@@ -55,8 +55,6 @@ router.get('/volume', (req, res)=>{
 })
 
 
-router.get('characters',(req,res)=>
-res.render('characters'))
 
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
@@ -84,7 +82,6 @@ router.get('/characters', (req,res)=>{
     })
     
 })
-<<<<<<< HEAD
 
 router.get('/series', (req,res)=>{
     Series.findAll({
@@ -110,8 +107,6 @@ router.get('/series', (req,res)=>{
 // })
 
 
-=======
->>>>>>> 58daab7a36ffa7d67105b292895ac51d2fd5c531
 
 router.get('/volume',(req,res)=>{
     Volume.findAll({
