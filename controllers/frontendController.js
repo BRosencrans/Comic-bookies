@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher, Character} = require('../models');
+const {User, Post, Comment, Publisher, Character,Series} = require('../models');
 
 
 router.get("/",(req,res)=>{
@@ -54,12 +54,7 @@ router.get('/volume', (req, res)=>{
     res.render('volume')
 })
 
-router.get('/series', (req, res)=>{
-    res.render('series')
-})
 
-router.get('characters',(req,res)=>
-res.render('characters'))
 
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
@@ -87,6 +82,31 @@ router.get('/characters', (req,res)=>{
     })
     
 })
+
+router.get('/series', (req,res)=>{
+    Series.findAll({
+        limit: 7
+    }).then(seriesData=>{
+        console.log(seriesData)
+        const hbsSeriesData = seriesData.map(series=>series.toJSON())
+        res.render('series', {
+            allSeries:hbsSeriesData
+        })
+    })
+    
+})
+// // login page
+// router.get("/login",(req,res)=>{
+//     if(req.session.loggedIn){
+//         return res.redirect("/")
+//     }
+//     res.render("login",{
+//         isLoggedIn:req.session.loggedIn,
+//         userId:req.session.userId,
+//     })
+// })
+
+
 
 router.get('/volume',(req,res)=>{
     Volume.findAll({
