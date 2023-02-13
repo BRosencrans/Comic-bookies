@@ -49,9 +49,6 @@ router.get("/profile",(req,res)=>{
     })
     // res.redirect("/sessions")
 })
-router.get("/publisher",(req,res)=>{
-    res.render("publisher")
-})
 
 
 router.get('/character', (req,res)=>{
@@ -66,6 +63,18 @@ router.get('/series', (req, res)=>{
     res.render('series')
 })
 
+router.get('/publisher', (req,res)=>{
+    Publisher.findAll({
+        limit: 10
+    }).then(publisherData=>{
+        console.log(publisherData)
+        const hbsPubData = publisherData.map(publisher=>publisher.toJSON())
+        res.render('publisher', {
+            allPublishers:hbsPubData
+        })
+    })
+    
+})
 // // login page
 // router.get("/login",(req,res)=>{
 //     if(req.session.loggedIn){
