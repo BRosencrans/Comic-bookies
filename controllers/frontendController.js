@@ -67,6 +67,7 @@ router.get('/publisher', (req,res)=>{
         res.render('publisher', {
             allPublishers:hbsPubData
         })
+
     })
     
 })
@@ -79,6 +80,7 @@ router.get('/characters', (req,res)=>{
         res.render('characters', {
             allCharacters:hbsCharData
         })
+
     })
     
 })
