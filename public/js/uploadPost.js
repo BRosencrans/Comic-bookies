@@ -18,9 +18,11 @@ document.querySelector('#post-form').addEventListener('submit', function (e) {
     .then((response)=> response.json())
     .then((data)=>{
         console.log("Success:",data);
+        location.reload();
     })
     .catch((error)=> {
         console.log('Error:', error);
     });
     })
   
+    document.querySelector('#')
