@@ -47,7 +47,6 @@ const filteredCharacterData2 = filteredCharacterData1.filter((character) => {
     return flag;
 });
 
-
 const trimmedPublishersData = rawPublishersData.map((publisher) => {
     return {name:publisher.name,
         deck:publisher.deck,

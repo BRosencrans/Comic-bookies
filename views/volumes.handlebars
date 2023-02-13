@@ -1,18 +1,15 @@
 <div id="volume">
     <h1>Volumes</h1>
-    {{#each allVolumes}}
-    <section>
-    <h2 >{{name}}</h2>
-    <h3>{{publisher_name}} </h3>
-    <h4>{{first_issue_name}} </h4>
-    <h4>{{last_issue_name}} </h4>
-    <h4>{{last_issue_number}} </h4>
-    <h4>{{count_of_issues}} </h4>
-    </section>
-    {{/each}}
-    <form id="volumeForm">
-        <input type="text" id="volumeRequest" placeholder="Volume">
-        <button>Volume</button>
+   
     </form>
 </div>
+    {{#each allVolumes}}
+    <section id="vols-box">
+    <h2 id="vol-name">{{name}}</h2>
+    <h3 id="pubs-name">published by: {{publisher_name}} </h3>
+    <h4 id="first-ish-name">first issue: {{first_issue_name}} </h4>
+    <h4 id="first-ish-num"> {{last_issue_name}} </h4>
+    <h4 id="num-ish">total issues: {{count_of_issues}} </h4>
+    </section>
+    {{/each}}
 <script src="/js/volume.js" ></script>

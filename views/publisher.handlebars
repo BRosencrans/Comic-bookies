@@ -1,20 +1,11 @@
 <div id="publisher">
     <h1>Publishers</h1>
+</div>
 {{#each allPublishers}}
 <section class="pub-box" id="pubs">
-    <h2 id="title-post">{{name}}</h2>
-    <p id="post-text"> {{deck}}</p>
-    <h3 id="users">{{description}} </h3>
+    <h2 id="title-pub">{{name}}</h2>
+    <p id="pub-text"> {{deck}}</p>
+    <h3 id="pub-descript">{{description}} </h3>
 </section>
 {{/each}}
-    <form id="publisherForm">
-<<<<<<< HEAD
-    <input type="text" id="publisherRequest" placeholder="publisher">
-    <button>Publisher</button>
-=======
->>>>>>> dev
-    <input type="text" id="publisherRequest" placeholder="Publisher">
-    <button>search</button>
-</form>
-</div>
 <script src="/js/publisher.js"></script>

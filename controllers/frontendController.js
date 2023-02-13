@@ -65,7 +65,7 @@ router.get('/publisher', (req,res)=>{
 })
 router.get('/characters', (req,res)=>{
     Character.findAll({
-        limit: 5
+        limit: 10
     }).then(characterData=>{
         console.log(characterData)
         const hbsCharData = characterData.map(character=>character.toJSON())
@@ -79,7 +79,7 @@ router.get('/characters', (req,res)=>{
 
 router.get('/series', (req,res)=>{
     Series.findAll({
-        limit: 7
+        limit: 10
     }).then(seriesData=>{
         console.log(seriesData)
         const hbsSeriesData = seriesData.map(series=>series.toJSON())
@@ -91,7 +91,7 @@ router.get('/series', (req,res)=>{
 })
 router.get('/volumes', (req,res)=>{
     Volume.findAll({
-        limit: 7
+        limit: 10
     }).then(volumeData=>{
         console.log(volumeData)
         const hbsVolumeData = volumeData.map(volume=>volume.toJSON())
@@ -102,16 +102,6 @@ router.get('/volumes', (req,res)=>{
     
 })
 
-// // login page
-// router.get("/login",(req,res)=>{
-//     if(req.session.loggedIn){
-//         return res.redirect("/")
-//     }
-//     res.render("login",{
-//         isLoggedIn:req.session.loggedIn,
-//         userId:req.session.userId,
-//     })
-// })
 
 
 
