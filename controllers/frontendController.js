@@ -1,10 +1,6 @@
 const express= require('express');
 const router= express.Router();
-<<<<<<< HEAD
-const {User, Post, Comment, Publisher, Character Volume} = require('../models');
-=======
 const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
->>>>>>> dev
 
 
 router.get("/",(req,res)=>{
@@ -54,7 +50,6 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
-<<<<<<< HEAD
 router.get('/volume', (req, res)=>{
     res.render('volume')
 })
@@ -67,9 +62,6 @@ router.get('characters',(req,res)=>
 res.render('characters'))
 
 router.get('/publishers', (req,res)=>{
-=======
-router.get('/publisher', (req,res)=>{
->>>>>>> dev
     Publisher.findAll({
         limit: 10
     }).then(publisherData=>{
@@ -96,17 +88,6 @@ router.get('/characters', (req,res)=>{
     
 })
 
-<<<<<<< HEAD
-router.get('/volumes',(req,res)=>{
-    Volume.findAll({
-        limit:5
-    }).then(volumeData=>{
-        console.log(volumeData)
-        const hbsVolume= volumeData.map(volume=>volume.toJSON())
-        console.log(hbsVolume)
-        res.render('volume', {
-            allVolume:hbsVolume
-=======
 router.get('/series', (req,res)=>{
     Series.findAll({
         limit: 10
@@ -115,7 +96,6 @@ router.get('/series', (req,res)=>{
         const hbsSeriesData = seriesData.map(series=>series.toJSON())
         res.render('series', {
             allSeries:hbsSeriesData
->>>>>>> dev
         })
     })
     

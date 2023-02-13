@@ -1,17 +1,15 @@
 <div id="characters">
     <h1>Characters</h1>
+  
+</div>
 {{#each allCharacters}}
-<section class="char-box" id="pubs">
-    <h2 >{{name}}</h2>
-    <h3>{{aliases}} </h3>
-    <h4>{{ first_appearance_in_issue_number}} </h4>
-    <h4>{{ first_appearance_in_issue_name}} </h4>
-    <h4>{{ count_of_issue_appearances}} </h4>
+<section class="char-box" id="chars">
+    <h2 id="char-names">{{name}}</h2>
+    <h3 id="char-alias">{{aliases}} </h3>
+    <h4 id="char-first-ish">first appeared in issue number:{{first_appearance_in_issue_number}} </h4>
+    <h4 id="char-first-ish-name">title of issue: {{first_appearance_in_issue_name}} </h4>
+    <h4 id="num-appearences">total appearences: {{count_of_issue_appearances}} </h4>
 
 </section>
 {{/each}}
-    <form id="characterForm">
-    <input type="text" id="characterRequest" placeholder="Characters">
-    <button>search</button>
 </form>
-</div>
