@@ -206,3 +206,30 @@ margin-top: 10px;
     color:crimson;
     text-align: center;
 }
+#post-form{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslategray;
+    border-radius: 15px;
+    padding:18px;
+    width:22vw;
+    margin-left:23vw;
+    margin-top: 35px;
+}
+#post-title{
+    color:rgb(134, 182, 200);
+    text-align: center;
+    margin: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+#new-title{
+    margin:5px;
+    width:200px;
+    margin-left: 40px;
+}
+#new-post{
+    margin:5px;
+    width:200px;
+    margin-left: 40px;;
+}
