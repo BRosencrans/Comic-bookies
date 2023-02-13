@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher, Character,Series} = require('../models');
+const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
 
 
 router.get("/",(req,res)=>{
@@ -50,12 +50,6 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
-router.get('/volume', (req, res)=>{
-    res.render('volume')
-})
-
-
-
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
         limit: 10
@@ -95,6 +89,19 @@ router.get('/series', (req,res)=>{
     })
     
 })
+router.get('/volumes', (req,res)=>{
+    Volume.findAll({
+        limit: 7
+    }).then(volumeData=>{
+        console.log(volumeData)
+        const hbsVolumeData = volumeData.map(volume=>volume.toJSON())
+        res.render('volumes', {
+            allVolumes:hbsVolumeData
+        })
+    })
+    
+})
+
 // // login page
 // router.get("/login",(req,res)=>{
 //     if(req.session.loggedIn){
@@ -108,17 +115,6 @@ router.get('/series', (req,res)=>{
 
 
 
-router.get('/volume',(req,res)=>{
-    Volume.findAll({
-        limit:10
-    }).then(volumeData=>{
-        console.log(volumeData)
-        const hbsVolume= volumeData.map(volume=>volume.toJSON())
-        console.log(hbsVolume)
-        res.render('volume', {
-            allVolume:hbsVolume
-        })
-    })
-})
+
 module.exports= router;
 
