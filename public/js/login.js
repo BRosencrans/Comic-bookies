@@ -16,7 +16,7 @@ document.querySelector("#loginForm").addEventListener("submit",e=>{
         if(res.ok){
            location.href="/"
         } else {
-            alert("trumpet sound")
+            alert("username or passward are incorrect")
         }
     })
 })
