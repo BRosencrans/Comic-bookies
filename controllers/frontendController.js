@@ -67,6 +67,20 @@ router.get('/publisher', (req,res)=>{
         res.render('publisher', {
             allPublishers:hbsPubData
         })
+
+    })
+    
+})
+router.get('/characters', (req,res)=>{
+    Character.findAll({
+        limit: 5
+    }).then(characterData=>{
+        console.log(characterData)
+        const hbsCharData = characterData.map(character=>character.toJSON())
+        res.render('characters', {
+            allCharacters:hbsCharData
+        })
+
     })
     
 })

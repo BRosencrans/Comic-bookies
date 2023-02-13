@@ -1,12 +1,13 @@
 <div id="characters">
     <h1>Characters</h1>
 {{#each allCharacters}}
-<section class="char-box">
+<section class="char-box" id="pubs">
     <h2 >{{name}}</h2>
     <h3>{{aliases}} </h3>
     <h4>{{ first_appearance_in_issue_number}} </h4>
     <h4>{{ first_appearance_in_issue_name}} </h4>
-    <h4>{{count_of_issue_appearances}} </h4>
+    <h4>{{ count_of_issue_appearances}} </h4>
+
 </section>
 {{/each}}
     <form id="characterForm">
