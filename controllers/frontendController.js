@@ -66,15 +66,6 @@ router.get('/series', (req, res)=>{
     res.render('series')
 })
 
-router.get('/publisher', (req,res)=>{
-    Publisher.findAll({
-        limit: 10
-    }).then(publisherData=>{
-        console.log(publisherData)
-        res.render('publisher', {publisherData})
-    })
-    
-})
 // // login page
 // router.get("/login",(req,res)=>{
 //     if(req.session.loggedIn){
