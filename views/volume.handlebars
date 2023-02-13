@@ -1,9 +1,15 @@
 <div id="volume">
-<h1>Volumes</h1>
-
-<form id="volumeForm">
-    <input type="text" id="volumeRequest" placeholder="Volume">
-    <button>search</button>
-</form>
-
+    <h1>Volumes</h1>
+    {{#each allVolumes}}
+    <section class="vol-box" id="vols">
+        <h2 id="title-post">{{name}}</h2>
+        <p id="post-text">{{deck}}</p>
+        <h3 id="users">{{description}}</h3>
+    </section>
+    {{/each}}
+    <form id="volumeForm">
+        <input type="text" id="volumeRequest" placeholder="Volume">
+        <button>Volume</button>
+    </form>
 </div>
+<script src="/js/volume.js" ></script>

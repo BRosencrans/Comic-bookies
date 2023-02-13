@@ -1,6 +1,9 @@
-document.querySelector("#loadChars").addEventListener("submit",e=>{
+document.querySelector("#characterForm").addEventListener("submit",e=>{
     e.preventDefault();
-
+    const charobj={
+        characters:document.querySelector("#characterRequest").value,
+        }
+        console.log(charobj)
    
 
     fetch("/api/characters",{
