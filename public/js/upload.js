@@ -1,8 +1,7 @@
-const cloudinary = require('cloudinary')
 
 var myWidget = cloudinary.createUploadWidget({
-    cloudName: 'process.env.CLOUD_NAME', 
-    uploadPreset: 'process.env.UPLOAD_PRESET',
+    cloudName: '', 
+    uploadPreset: '',
     sources: ["local"],
      multiple: false},
       (error, result) => { 
