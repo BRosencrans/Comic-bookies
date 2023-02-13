@@ -37,6 +37,14 @@ footer{
     position:static;
     bottom:0;
 }
+button{
+    width: fit-content;
+    background-color: darkslateblue;
+    color:aliceblue;
+    padding:3px;
+    border-radius: 5px;
+    margin-left: 300px;
+}
 #welcome{
     display: flex;
     justify-content: center;

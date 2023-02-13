@@ -49,9 +49,6 @@ router.get("/profile",(req,res)=>{
     })
     // res.redirect("/sessions")
 })
-router.get("/publisher",(req,res)=>{
-    res.render("publisher")
-})
 
 
 router.get('/character', (req,res)=>{
@@ -74,7 +71,10 @@ router.get('/publisher', (req,res)=>{
         limit: 10
     }).then(publisherData=>{
         console.log(publisherData)
-        res.render('publisher', {publisherData})
+        const hbsPubData = publisherData.map(publisher=>publisher.toJSON())
+        res.render('publisher', {
+            allPublishers:hbsPubData
+        })
     })
     
 })
