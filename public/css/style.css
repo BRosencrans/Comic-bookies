@@ -26,11 +26,11 @@ main {
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
-    background-color: aliceblue;
+    background-color: rgb(149, 179, 184);
 }
 footer{
     background-color: darkslategray;
-    color:aliceblue;
+    color:rgb(206, 212, 217);
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -100,4 +100,24 @@ margin-top: 10px;
     padding:3px;
     border-radius: 5px;
     margin-left: 300px;
+}
+#publisher{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#series{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#characters{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#volume{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
 }
