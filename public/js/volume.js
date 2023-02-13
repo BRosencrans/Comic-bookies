@@ -1,4 +1,4 @@
-ocument.querySelector("#volumeForm").addEventListener("submit",e=>{
+document.querySelector("#volumeForm").addEventListener("submit",e=>{
     e.preventDefault();
     const volObj = {
         volume:document.querySelector("#volumeRequest").value,
