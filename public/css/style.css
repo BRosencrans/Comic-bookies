@@ -15,17 +15,27 @@ header {
     display: flex;
     justify-content: space-around;
     background-color: darkslategrey;
-    font-size: larger;
-    /* background: */
+    font-size: larger;   
+}
+header a{
+    color:aliceblue
 }
 
 main {
     min-height: 80vh;
-    /* background: */
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
     background-color: aliceblue;
+}
+footer{
+    background-color: darkslategray;
+    color:aliceblue;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position:absolute;
+    bottom:0;
 }
 #welcome{
     display: flex;
@@ -43,4 +53,12 @@ main {
     text-align: center;
     background-color: darkslateblue;
     color:aliceblue;
+}
+#upload_widget{
+    margin: 15px;
+    margin-left:5vw;
+    margin-top: 70vh;
+    background-color: darkslategray;
+    border-radius: 15px;
+
 }
