@@ -17,6 +17,7 @@ router.get("/",(req,res)=>{
         res.render("home",{
             isLoggedIn:req.session.loggedIn,
             userId:req.session.userId,
+            allPosts:hbsPost
         })
     })
 })
