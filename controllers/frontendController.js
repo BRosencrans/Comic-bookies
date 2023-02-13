@@ -21,6 +21,20 @@ router.get("/",(req,res)=>{
         })
     })
 })
+router.post('/', (req, res)=>{
+    if(!req.session.userId){
+        return res.status(403).json({msg:'log in first!'})
+    }
+    console.log(req.body)
+    Post.create({
+        psot:req.body.post,
+        userId:req.session.userId
+    }).then(postData=>{
+        res.json(postData)
+    }).catch(err);
+    res.status(500).json({msg:'aww shucks!', err})
+})
+
 router.get("/login",(req,res)=>{
     if(req.session.loggedIn){
         return res.redirect('/')
