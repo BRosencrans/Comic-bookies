@@ -1,6 +1,18 @@
 <div id="series">
     <h1>Series</h1>
+{{#each allSeries}}
+<section class="series-box" id="series">
+    <h2 >{{name}}</h2>
+    <h3>{{aliases}} </h3>
+    <h4>{{count_of_episodes}} </h4>
+    <h4>{{first_episode_title}} </h4>
+    <h4>{{last_episode_title}} </h4>
+    <h4>{{deck}} </h4>
+    <h4>{{start_year}} </h4>
 
+</section>
+{{/each}}
+    <form id="char
     <form id="seriesForm">
     <input type="text" id="seriesRequest" placeholder="Series">
     <button>search</button>

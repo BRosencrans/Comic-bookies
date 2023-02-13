@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher, Character} = require('../models');
+const {User, Post, Comment, Publisher, Character,Series} = require('../models');
 
 
 router.get("/",(req,res)=>{
@@ -54,9 +54,6 @@ router.get('/volume', (req, res)=>{
     res.render('volume')
 })
 
-router.get('/series', (req, res)=>{
-    res.render('series')
-})
 
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
@@ -85,14 +82,14 @@ router.get('/characters', (req,res)=>{
     
 })
 
-router.get('/character', (req,res)=>{
-    Character.findAll({
-        limit: 5
-    }).then(characterData=>{
-        console.log(characterData)
-        const hbsCharData = characterData.map(character=>character.toJSON())
-        res.render('character', {
-            allCharacters:hbsCharData
+router.get('/series', (req,res)=>{
+    Series.findAll({
+        limit: 7
+    }).then(seriesData=>{
+        console.log(seriesData)
+        const hbsSeriesData = seriesData.map(series=>series.toJSON())
+        res.render('series', {
+            allSeries:hbsSeriesData
         })
     })
     
