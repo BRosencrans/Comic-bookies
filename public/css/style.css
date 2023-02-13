@@ -15,17 +15,27 @@ header {
     display: flex;
     justify-content: space-around;
     background-color: darkslategrey;
-    font-size: larger;
-    /* background: */
+    font-size: larger;   
+}
+header a{
+    color:aliceblue
 }
 
 main {
-    min-height: 80vh;
-    /* background: */
+    height: 100vh;
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
     background-color: aliceblue;
+}
+footer{
+    background-color: darkslategray;
+    color:aliceblue;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position:static;
+    bottom:0;
 }
 #welcome{
     display: flex;
@@ -43,4 +53,51 @@ main {
     text-align: center;
     background-color: darkslateblue;
     color:aliceblue;
+}
+#upload_widget{
+    margin: 15px;
+    margin-left:55vw;
+    margin-top: 45vh;
+    background-color: darkslategray;
+    border-radius: 15px;
+
+}
+#posts{
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    padding:8px;
+    margin:25px;
+    margin-left: 23vw;
+    background-color: darkslategray;
+    border-radius: 15px;
+    color:aliceblue;
+}
+#users{
+    margin-top: 5px;;
+    text-align: right;
+    color:aliceblue;
+}
+#title-post{
+    color:rgb(134, 182, 200);
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 2 ;
+}
+#post-text{
+margin-top: 5px;
+}
+#comment-text{
+width:200px;
+margin-left:50px;
+margin-top: 10px;
+}
+
+#comment-btn{
+    width: fit-content;
+    background-color: darkslateblue;
+    color:aliceblue;
+    padding:3px;
+    border-radius: 5px;
+    margin-left: 300px;
 }

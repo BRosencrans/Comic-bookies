@@ -49,6 +49,10 @@ router.get("/profile",(req,res)=>{
     })
     // res.redirect("/sessions")
 })
+router.get("/publisher",(req,res)=>{
+    res.render("publisher")
+})
+
 
 // // login page
 // router.get("/login",(req,res)=>{
