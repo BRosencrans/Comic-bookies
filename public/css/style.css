@@ -57,7 +57,7 @@ footer{
 #upload_widget{
     margin: 15px;
     margin-left:55vw;
-    margin-top: 58vh;
+    margin-top: 45vh;
     background-color: darkslategray;
     border-radius: 15px;
 
@@ -74,11 +74,30 @@ footer{
     color:aliceblue;
 }
 #users{
-    text-decoration: underline;
-    text-align: center;
-    color:lemonchiffon;
+    margin-top: 5px;;
+    text-align: right;
+    color:aliceblue;
 }
 #title-post{
+    color:rgb(134, 182, 200);
     text-align: center;
+    text-decoration: underline;
     text-shadow: 2 ;
+}
+#post-text{
+margin-top: 5px;
+}
+#comment-text{
+width:200px;
+margin-left:50px;
+margin-top: 10px;
+}
+
+#comment-btn{
+    width: fit-content;
+    background-color: darkslateblue;
+    color:aliceblue;
+    padding:3px;
+    border-radius: 5px;
+    margin-left: 300px;
 }
