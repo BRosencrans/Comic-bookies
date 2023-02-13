@@ -46,9 +46,6 @@ router.get("/logout",(req,res)=>{
     }
     )
 })
-router.get("/log out",(req,res)=>{
-    res.render("log out")
-})
 
 router.get("/profile",(req,res)=>{
     if(!req.session.userId){
@@ -65,17 +62,6 @@ router.get("/profile",(req,res)=>{
     })
     // res.redirect("/sessions")
 })
-
-router.get('/volume', (req, res)=>{
-    res.render('volume')
-})
-
-router.get('/series', (req, res)=>{
-    res.render('series')
-})
-
-router.get('characters',(req,res)=>
-res.render('characters'))
 
 router.get('/publishers', (req,res)=>{
     Publisher.findAll({
