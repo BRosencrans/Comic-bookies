@@ -50,6 +50,27 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
+router.get('/character', (req,res)=>{
+    res.render('character')
+})
+
+router.get('/volume', (req, res)=>{
+    res.render('volume')
+})
+
+router.get('/series', (req, res)=>{
+    res.render('series')
+})
+
+router.get('/publisher', (req,res)=>{
+    Publisher.findAll({
+        limit: 10
+    }).then(publisherData=>{
+        console.log(publisherData)
+        res.render('publisher', {publisherData})
+    })
+    
+})
 // // login page
 // router.get("/login",(req,res)=>{
 //     if(req.session.loggedIn){
