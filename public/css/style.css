@@ -145,3 +145,49 @@ margin-top: 10px;
     text-align: center;
 
 }
+#char-names{
+    text-align: center;
+}
+
+#chars{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:10px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#series-list{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:10px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#names{
+    text-align: center;
+}
+#vols-box{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:5px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#vol-name{
+    text-align: center;
+}
