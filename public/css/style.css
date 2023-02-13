@@ -101,3 +101,23 @@ margin-top: 10px;
     border-radius: 5px;
     margin-left: 300px;
 }
+#publisher{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#series{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#characters{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#volume{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
