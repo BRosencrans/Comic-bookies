@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher} = require('../models');
+const {User, Post, Comment, Publisher, Character} = require('../models');
 
 
 router.get("/",(req,res)=>{
@@ -50,11 +50,6 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
-
-router.get('/character', (req,res)=>{
-    res.render('character')
-})
-
 router.get('/volume', (req, res)=>{
     res.render('volume')
 })
@@ -72,6 +67,20 @@ router.get('/publisher', (req,res)=>{
         res.render('publisher', {
             allPublishers:hbsPubData
         })
+
+    })
+    
+})
+router.get('/characters', (req,res)=>{
+    Character.findAll({
+        limit: 5
+    }).then(characterData=>{
+        console.log(characterData)
+        const hbsCharData = characterData.map(character=>character.toJSON())
+        res.render('characters', {
+            allCharacters:hbsCharData
+        })
+
     })
     
 })
