@@ -1,4 +1,4 @@
-ocument.querySelector("#publisherForm").addEventListener("submit",e=>{
+document.querySelector("#publisherForm").addEventListener("submit",e=>{
     e.preventDefault();
     const pubObj = {
         publisher:document.querySelector("#publisherRequest").value,
