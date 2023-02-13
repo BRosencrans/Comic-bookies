@@ -22,7 +22,7 @@ header a{
 }
 
 main {
-    height: 100vh;
+    height: 100%;
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
@@ -128,4 +128,20 @@ margin-top: 10px;
     text-align: center;
     background-color: darkslateblue;
     color:aliceblue;
+}
+#pubs{
+    display:flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: center;
+    background-color: darkslategrey;
+    padding:5px;
+    margin:20px;
+    margin-left: 27vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237)
+}
+#title-pub{
+    text-align: center;
+
 }
