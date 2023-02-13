@@ -38,7 +38,7 @@ app.use('/',allRoutes);
 app.get("/sessions",(req,res)=>{
    res.json(req.session)
 })
-sequelize.sync({ force:false}).then(function() {
+sequelize.sync({ force:true}).then(function() {
     app.listen(PORT, function() {
     console.log('App listening on PORT ' + PORT);
     });
