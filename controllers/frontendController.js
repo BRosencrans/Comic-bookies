@@ -58,6 +58,9 @@ router.get('/series', (req, res)=>{
     res.render('series')
 })
 
+router.get('characters',(req,res)=>
+res.render('characters'))
+
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
         limit: 10
@@ -84,18 +87,18 @@ router.get('/characters', (req,res)=>{
     })
     
 })
-// // login page
-// router.get("/login",(req,res)=>{
-//     if(req.session.loggedIn){
-//         return res.redirect("/")
-//     }
-//     res.render("login",{
-//         isLoggedIn:req.session.loggedIn,
-//         userId:req.session.userId,
-//     })
-// })
 
-
-
+router.get('/volume',(req,res)=>{
+    Volume.findAll({
+        limit:10
+    }).then(volumeData=>{
+        console.log(volumeData)
+        const hbsVolume= volumeData.map(volume=>volume.toJSON())
+        console.log(hbsVolume)
+        res.render('volume', {
+            allVolume:hbsVolume
+        })
+    })
+})
 module.exports= router;
 
