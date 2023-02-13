@@ -28,6 +28,15 @@ main {
     border:solid black 2px;
     background-color: aliceblue;
 }
+footer{
+    background-color: darkslategray;
+    color:aliceblue;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position:absolute;
+    bottom:0;
+}
 #welcome{
     display: flex;
     justify-content: center;
@@ -44,4 +53,12 @@ main {
     text-align: center;
     background-color: darkslateblue;
     color:aliceblue;
+}
+#upload_widget{
+    margin: 15px;
+    margin-left:5vw;
+    margin-top: 70vh;
+    background-color: darkslategray;
+    border-radius: 15px;
+
 }
