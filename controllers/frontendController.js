@@ -58,6 +58,9 @@ router.get('/series', (req, res)=>{
     res.render('series')
 })
 
+router.get('characters',(req,res)=>
+res.render('characters'))
+
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
         limit: 10
@@ -84,6 +87,7 @@ router.get('/characters', (req,res)=>{
     })
     
 })
+<<<<<<< HEAD
 
 router.get('/character', (req,res)=>{
     Character.findAll({
@@ -109,6 +113,20 @@ router.get('/character', (req,res)=>{
 // })
 
 
+=======
+>>>>>>> 58daab7a36ffa7d67105b292895ac51d2fd5c531
 
+router.get('/volume',(req,res)=>{
+    Volume.findAll({
+        limit:10
+    }).then(volumeData=>{
+        console.log(volumeData)
+        const hbsVolume= volumeData.map(volume=>volume.toJSON())
+        console.log(hbsVolume)
+        res.render('volume', {
+            allVolume:hbsVolume
+        })
+    })
+})
 module.exports= router;
 
