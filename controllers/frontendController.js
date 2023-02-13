@@ -1,6 +1,6 @@
 const express= require('express');
 const router= express.Router();
-const {User, Post, Comment, Publisher, Character} = require('../models');
+const {User, Post, Comment, Publisher, Character, Volume} = require('../models');
 
 
 router.get("/",(req,res)=>{
@@ -96,7 +96,7 @@ router.get('/volume',(req,res)=>{
         const hbsVolume= volumeData.map(volume=>volume.toJSON())
         console.log(hbsVolume)
         res.render('volume', {
-            allVolume:hbsVolume
+            allVolumes:hbsVolume
         })
     })
 })
