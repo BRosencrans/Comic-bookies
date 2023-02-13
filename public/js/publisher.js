@@ -5,7 +5,7 @@ ocument.querySelector("#publisherForm").addEventListener("submit",e=>{
     }
     console.log(pubObj)
 
-    fetch("/api/users/login",{
+    fetch("/api/publishers",{
         method:"POST",
         body:JSON.stringify(pubObj),
         headers:{
