@@ -191,3 +191,18 @@ margin-top: 10px;
 #vol-name{
     text-align: center;
 }
+#deadpool{
+    display: flex;
+    margin-left:18vw;
+}
+#justice{
+  margin:90px;
+  margin-left:220px;
+  width: 750px;
+}
+#welcome-back{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 80px;;
+    color:crimson;
+    text-align: center;
+}
