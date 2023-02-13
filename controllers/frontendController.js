@@ -2,13 +2,16 @@ const express= require('express');
 const router= express.Router();
 const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
 
-
 router.get("/",(req,res)=>{
     Post.findAll({
-        include:{
-            model:User,
-            as: 'User'
+        include:[
+        {
+            model: Comment,
+            as: "Comment",
+            attributes: ['id', 'post_id', 'userName', 'comment'],
+           
         }
+    ]
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
@@ -21,6 +24,7 @@ router.get("/",(req,res)=>{
         })
     })
 })
+
 router.get("/login",(req,res)=>{
     if(req.session.loggedIn){
         return res.redirect('/')
