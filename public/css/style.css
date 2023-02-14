@@ -1,0 +1,235 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-image: url('./old-comics.jpg');
+
+}
+
+header {
+    border: solid 2px black;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    background-color: darkslategrey;
+    font-size: larger;   
+}
+header a{
+    color:aliceblue
+}
+
+main {
+    height: 100%;
+    width:70vw;
+    margin:0 auto;
+    border:solid black 2px;
+    background-color: rgb(149, 179, 184);
+}
+footer{
+    background-color: darkslategray;
+    color:rgb(206, 212, 217);
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    position:static;
+    bottom:0;
+}
+button{
+    width: fit-content;
+    background-color: darkslateblue;
+    color:aliceblue;
+    padding:3px;
+    border-radius: 5px;
+    margin-left: 300px;
+}
+#welcome{
+    display: flex;
+    justify-content: center;
+    border: solid black 2px;
+    background-color:darkslateblue;
+    color:aliceblue;
+}
+#log-in{
+   text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#sign-up{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#upload_widget{
+    margin: 15px;
+    margin-left:55vw;
+    margin-top: 45vh;
+    background-color: darkslategray;
+    border-radius: 15px;
+
+}
+#posts{
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    padding:8px;
+    margin:25px;
+    margin-left: 23vw;
+    background-color: darkslategray;
+    border-radius: 15px;
+    color:aliceblue;
+}
+#users{
+    margin-top: 5px;;
+    text-align: right;
+    color:aliceblue;
+}
+#title-post{
+    color:rgb(134, 182, 200);
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 2 ;
+}
+#post-text{
+margin-top: 5px;
+}
+#comment-text{
+width:200px;
+margin-left:50px;
+margin-top: 10px;
+}
+
+#comment-btn{
+    width: fit-content;
+    background-color: darkslateblue;
+    color:aliceblue;
+    padding:3px;
+    border-radius: 5px;
+    margin-left: 300px;
+}
+#publisher{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#series{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#characters{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#volume{
+    text-align: center;
+    background-color: darkslateblue;
+    color:aliceblue;
+}
+#pubs{
+    display:flex;
+    flex-direction: column;
+    width: 250px;
+    justify-content: center;
+    background-color: darkslategrey;
+    padding:5px;
+    margin:20px;
+    margin-left: 27vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237)
+}
+#title-pub{
+    text-align: center;
+
+}
+#char-names{
+    text-align: center;
+}
+
+#chars{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:10px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#series-list{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:10px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#names{
+    text-align: center;
+}
+#vols-box{
+    display:flex;
+    flex-direction: column;
+    width:350px;
+    justify-content: center;
+    background-color: darkslategray;
+    padding:5px;
+    margin:20px;
+    margin-left: 25vw;
+    border-radius: 5px;
+    color:rgb(213, 226, 237);
+}
+#vol-name{
+    text-align: center;
+}
+#deadpool{
+    display: flex;
+    margin-left:18vw;
+}
+#justice{
+  margin:90px;
+  margin-left:220px;
+  width: 750px;
+}
+#welcome-back{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 80px;;
+    color:crimson;
+    text-align: center;
+}
+#post-form{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslategray;
+    border-radius: 15px;
+    padding:18px;
+    width:22vw;
+    margin-left:23vw;
+    margin-top: 35px;
+}
+#post-title{
+    color:rgb(134, 182, 200);
+    text-align: center;
+    margin: 5px;
+    margin-bottom: 15px;
+    text-decoration: underline;
+}
+#new-title{
+    margin:5px;
+    width:200px;
+    margin-left: 40px;
+}
+#new-post{
+    margin:5px;
+    width:200px;
+    margin-left: 40px;;
+}

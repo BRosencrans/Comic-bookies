@@ -1,0 +1,10 @@
+<div id="publisher">
+    <h1>Publishers</h1>
+</div>
+{{#each allPublishers}}
+<section class="pub-box" id="pubs">
+    <h2 id="title-pub">{{name}}</h2>
+    <p id="pub-text"> {{deck}}</p>
+</section>
+{{/each}}
+<script src="/js/publisher.js"></script>
