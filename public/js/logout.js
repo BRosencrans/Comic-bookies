@@ -1,6 +1,6 @@
 document.querySelector('#logoutBtn').addEventListener('click',()=>{
     fetch('api/user/logout',{
-        method: 'DELETE'
+        method: 'POST'
     }).then(res=>{
         if(res.ok){
             location.reload()
