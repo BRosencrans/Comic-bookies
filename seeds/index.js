@@ -97,12 +97,12 @@ const seed = async()=>{
         {title: "thoughts?",
             text:'the best place to read comics is in an ice palace',
             user_id:2,
-            userName: 'NotSuperman'
+            username: 'NotSuperman'
         },
         {title: "best movie eveeer",
             text:"when's the new howard the duck movie coming out?",
             user_id:1,
-            userName: 'HwrdtheDuck'
+            username: 'HwrdtheDuck'
         }
     ],{
         individualHooks:true
@@ -111,12 +111,12 @@ const seed = async()=>{
         {
             comment:'better than batman',
             post_id: 1,
-            userName: 'HwrdtheDuck'
+            username: 'HwrdtheDuck'
         },
         {
             comment:'batmans nothing with out robin',
             post_id:2,
-            userName: 'NotSuperman'
+            username: 'NotSuperman'
         }
     ])
 

@@ -1,7 +1,7 @@
 
 var myWidget = cloudinary.createUploadWidget({
-    cloudName: '', 
-    uploadPreset: '',
+    cloudName: 'dt0p49utk', 
+    uploadPreset: 'xqu2jyr0',
     sources: ["local"],
      multiple: false},
       (error, result) => { 
@@ -11,6 +11,6 @@ var myWidget = cloudinary.createUploadWidget({
     }
   )
   
-  document.getElementById("upload_widget").addEventListener("click", function(){
+ document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);

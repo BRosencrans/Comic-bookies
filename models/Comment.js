@@ -18,7 +18,7 @@ Comment.init({
             key: 'id'
         }
     },
-    userName:{
+    username:{
         type:DataTypes.STRING,
         references: {
             model: 'Users',
