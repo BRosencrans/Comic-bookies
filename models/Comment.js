@@ -22,7 +22,7 @@ Comment.init({
         type:DataTypes.STRING,
         references: {
             model: 'Users',
-            key: 'userName'
+            key: 'username'
     }
     },
     comment:{
