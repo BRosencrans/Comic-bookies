@@ -12,10 +12,6 @@ Publisher.init({
    deck:{
         type: DataTypes.TEXT,
         allowNull:true,
-    },
-    description:{
-        type: DataTypes.TEXT,
-        allowNull:true,
     }
 },{
     sequelize,
