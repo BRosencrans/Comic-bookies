@@ -14,7 +14,10 @@ const {User, Post, Comment, Publisher, Character, Volume, Series} = require('./m
 
 const sess = {
  secret: 'process.env.SESSION_SECRET',
-  cookie: {},
+  cookie: {
+   maxAge: 1000 * 60 * 60,
+   secure: true
+  },
    resave: false,
     saveUninitialized: true,
    store: new SequelizeStore({

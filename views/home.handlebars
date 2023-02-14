@@ -4,15 +4,15 @@
 <section class="post-box" id="posts">
   <a href="/post"> <h2 id="title-post">{{title}}</h2></a>
     <p id="post-text"> {{text}}</p>
-    <h3 id="users">by:{{userName}} </h3>
+    <h3 id="users">by:{{username}} </h3>
     <input type="text" placeholder="comment" id="comment-text">
     <button id="comment-btn">submit</button>
 </section>
 {{/each}}
 <form action="" id="post-form">
   <h2 id="post-title">New Post</h2>
-  <input type="text" placeholder="new post title" id="new-title">
-  <input type="text" placeholder="new post" id="new-post">
+  <input type="text" placeholder="new post title" id="new-title" required>
+  <input type="text" placeholder="new post" id="new-post" required>
   <button id="post-button" type="submit"> post </button>
 </form>
 
