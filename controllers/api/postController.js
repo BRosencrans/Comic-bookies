@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
     Post.findAll({
     include:[
     {model: Comment,
+        as: "Comment",
     attributes: ['id','post_id','userName','comment']
     }]
     })
