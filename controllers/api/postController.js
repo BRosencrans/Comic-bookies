@@ -43,7 +43,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     if(!req.session.userId){
-        return res.status(403).json({msg:"login first!"})
+        return res.status(403).json({message:"login first!"});
+      
      }
    //creates new post
     Post.create({

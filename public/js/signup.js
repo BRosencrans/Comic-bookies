@@ -9,7 +9,7 @@ document.querySelector("#signupForm").addEventListener("submit",e=>{
 
     fetch("/api/users/signup",{
         method:"POST",
-        body:JSON.stringify(signupOnbj),
+        body:JSON.stringify(signupObj),
         headers:{
             "Content-Type":"application/json"
         }
@@ -17,7 +17,7 @@ document.querySelector("#signupForm").addEventListener("submit",e=>{
         if(res.ok){
            location.href="/"
         } else {
-            alert("trumpet sound")
+            alert("nope")
         }
     })
 })

@@ -31,7 +31,7 @@ router.post('/', (req,res)=>{
     User.create({
         email:req.body.email,
         password:req.body.password,
-        userName:req.body.userName
+        username:req.body.username
     }).then(userData=>{
         req.session.userId = userData.id;
         req.session.userEmail = userData.email;
@@ -44,7 +44,7 @@ router.post('/', (req,res)=>{
 router.post('/login', (req,res)=>{
     User.findOne({
         where:{
-            email:req.body.email
+            username:req.body.username
         }
     }).then(userData=>{
         if (!userData){
@@ -63,6 +63,7 @@ router.post('/login', (req,res)=>{
         res.status(500).json({msg:'aww shucks!', err})
         })
     })
+
 router.delete("/logout", (req,res)=>{
     req.session.destroy();
     res.send('Logged Out');

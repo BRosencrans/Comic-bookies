@@ -80,14 +80,14 @@ const seed = async()=>{
     const users = await User.bulkCreate([
         {
             email:'yaycomics@yay.com',
-            password:'bookies',
-            userName: 'HwrdtheDuck',
+            password:'bookies123',
+            username: 'HwrdtheDuck',
             user_id:1
         },
         {
             email:'welove@comicbooks',
             password:'everybodyshouldreadcomicbooks',
-            userName: 'NotSuperman',
+            username: 'NotSuperman',
             user_id:2
         }
     ],{
@@ -114,7 +114,7 @@ const seed = async()=>{
             userName: 'HwrdtheDuck'
         },
         {
-            comment:'batmans nothing with out robbin',
+            comment:'batmans nothing with out robin',
             post_id:2,
             userName: 'NotSuperman'
         }
