@@ -125,10 +125,20 @@ router.get('/volumes', (req,res)=>{
     })
     
 })
-
-
-router.get('/post, (')
-
-
+router.get('/post/:id', (req, res) => {
+        Post.findByPk(req.params.id,{
+            include: [
+            {model: Comment,
+                as: 'Comment',
+            attributes: ['id','userName','comment'],
+            }]
+            })
+        .then(onePostData=>{
+            console.log(onePostData)
+            const onePost= onePostData.get()
+            res.render('post', {onePost
+            })
+        })
+});
 module.exports= router;
 
