@@ -5,11 +5,11 @@ class Post extends Model {}
 
 Post.init({
   //sets up the post table
-  userName:{
+  username:{
     type: DataTypes.STRING,
   references: {
     model: 'Users',
-    key: 'userName'
+    key: 'username'
   }},
   title: {
     type:  DataTypes.STRING,

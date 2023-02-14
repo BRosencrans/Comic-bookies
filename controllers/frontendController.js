@@ -49,15 +49,6 @@ router.post("/signup", async (req,res)=>{
     }
 })
 
-router.get("/logout",(req,res)=>{
-if (req.session.loggedIn){
-    req.session.destroy()
-  }
-  res.render('logout'),{
-    iLoggedOut:req.session.loggedOut,
-    userId:req.session.destroy
-  }
-});
 
 router.get("/profile",(req,res)=>{
     if(!req.session.userId){
