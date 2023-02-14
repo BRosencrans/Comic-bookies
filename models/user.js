@@ -21,7 +21,7 @@ User.init({
             len:[8]
         }
     },
-    userName:{
+    username:{
         type:DataTypes.STRING,
         allowNull:false,
         unique:true,

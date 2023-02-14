@@ -1,5 +1,6 @@
 const express= require('express');
 const router= express.Router();
+const bcrypt = require('bcrypt')
 const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
 
 
@@ -12,8 +13,6 @@ router.get("/",(req,res)=>{
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
-        console.log('==============================')
-        console.log(hbsPost)
         res.render("home",{
             isLoggedIn:req.session.loggedIn,
             userId:req.session.userId,
@@ -22,20 +21,31 @@ router.get("/",(req,res)=>{
     })
 })
 
+router.get('/login', (req, res)=>{
+    res.render('login')
+})
+router.get('/signup', (req,res)=>{
+    res.render('signup')
+})
+router.post("/signup", async (req,res)=>{
+    const {username, password, email} = req.body;
+    if (!username || !password || !email) {
+        return res.status(400).json({error: 'Username, Email and Password are required'});
+    }
+    try{
+        const newUser = await User.create({
+            username,
+            password,
+            email
+        });
+        req.session.loggedIn = true;
+        req.session.userId = newUser.id;
+        return res.redirect('/');
+    } catch(error){
+        return res.status(500).json({ error: 'Error while creating user'})
+    }
+})
 
-router.get("/login",(req,res)=>{
-    if(req.session.loggedIn){
-        return res.redirect('/')
-    }
-    res.render("login",{
-        isLoggedIn:req.session.loggedIn,
-        userId:req.session.userId,
-    }
-    )
-})
-router.get("/signup",(req,res)=>{
-    res.render("signup")
-})
 router.get("/logout",(req,res)=>{
     if(req.session.loggedOut){
         return res.redirect('/')
@@ -56,14 +66,12 @@ router.get("/profile",(req,res)=>{
     }).then(userdata=>{
         console.log(userdata)
         const hbsData = userdata.toJSON();
-        console.log('==============================')
-        console.log(hbsData)
         res.render("profile",hbsData)
     })
     // res.redirect("/sessions")
 })
 
-router.get('/publishers', (req,res)=>{
+router.get('/publisher', (req,res)=>{
     Publisher.findAll({
         limit: 10
     }).then(publisherData=>{

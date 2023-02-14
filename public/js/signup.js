@@ -17,7 +17,7 @@ document.querySelector("#signupForm").addEventListener("submit",e=>{
         if(res.ok){
            location.href="/"
         } else {
-            alert("trumpet sound")
+            alert("nope")
         }
     })
 })
