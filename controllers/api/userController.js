@@ -35,6 +35,7 @@ router.post('/signup', (req,res)=>{
     }).then(userData=>{
         req.session.userId = userData.id;
         req.session.userEmail = userData.email;
+        req.session.username =userData.username;
         res.json(userData)
     }).catch(err=>{
         console.log(err);
@@ -53,6 +54,7 @@ router.post('/login', (req,res)=>{
             if(bcrypt.compareSync(req.body.password, userData.password)){
                 req.session.userId = userData.id;
                 req.session.userEmail = userData.email;
+                req.session.username =userData.username;
                 return res.json(userData)
             } else {
                 return res.status(403).json({msg:'incorrect login credentials'})
@@ -67,7 +69,22 @@ router.post('/login', (req,res)=>{
 router.delete("/logout", (req,res)=>{
     req.session.destroy();
     res.send('Logged Out');
-    alert('logged out')
 });
+
+router.get('/username', (req,res)=>{
+    User.findOne({
+        where:{
+            username: req.query.username
+        }
+    }).then(userData=>{
+        req.session.username = userData.username;
+        res.json(userData);
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({msg:'aww shucks!', err})
+    })
+})
+
+
 
     module.exports = router;

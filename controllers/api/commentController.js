@@ -8,7 +8,7 @@ router.get('/', (req,res)=>{
         include:[
         {model: Post,
             as: "Post",
-        attributes: ['id','userName','title','text']
+        attributes: ['id','username','title','text']
         }]
         }).then(commentData=>{
         res.json(commentData)
