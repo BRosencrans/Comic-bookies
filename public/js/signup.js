@@ -16,6 +16,7 @@ document.querySelector("#signupForm").addEventListener("submit",e=>{
     }).then(res=>{
         if(res.ok){
            location.href="/"
+           alert('account created')
         } else {
             alert("nope")
         }
