@@ -63,5 +63,9 @@ router.post('/login', (req,res)=>{
         res.status(500).json({msg:'aww shucks!', err})
         })
     })
+router.delete("/logout", (req,res)=>{
+    req.session.destroy();
+    res.send('Logged Out');
+});
 
     module.exports = router;

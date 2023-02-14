@@ -38,6 +38,17 @@ router.get("/login",(req,res)=>{
 router.get("/signup",(req,res)=>{
     res.render("signup")
 })
+router.get("/logout",(req,res)=>{
+    if(req.session.loggedOut){
+        return res.redirect('/')
+    }
+    res.render("logout",{
+        isLoggedOut:req.session.loggedOut,
+        userId:req.session.userId,
+    }
+    )
+})
+
 router.get("/profile",(req,res)=>{
     if(!req.session.userId){
         return res.redirect("/login")
@@ -54,7 +65,7 @@ router.get("/profile",(req,res)=>{
     // res.redirect("/sessions")
 })
 
-router.get('/publisher', (req,res)=>{
+router.get('/publishers', (req,res)=>{
     Publisher.findAll({
         limit: 10
     }).then(publisherData=>{

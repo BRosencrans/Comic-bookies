@@ -25,6 +25,7 @@ router.get('/:id', (req, res) => {
    Post.findByPk(req.params.id,{
     include: [
     {model: Comment,
+        as: 'Comment',
     attributes: ['id','post_id','userName','comment'],
     }]
     })
@@ -41,6 +42,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    if(!req.session.userId){
+        return res.status(403).json({msg:"login first!"})
+     }
    //creates new post
     Post.create({
     title: req.body.title,

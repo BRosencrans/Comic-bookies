@@ -7,7 +7,7 @@ router.get('/', (req,res)=>{
     Comment.findAll({
         include:[
         {model: Post,
-            as:"Post",
+            as: "Post",
         attributes: ['id','userName','title','text']
         }]
         }).then(commentData=>{
