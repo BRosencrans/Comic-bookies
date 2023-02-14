@@ -1,3 +1,16 @@
+let isLoggedIn = document.cookie.includes("isLoggedIn=true");
+if (isLoggedIn) {
+let logoutBtn = document.createElement("button");
+logoutBtn.innerText = "Log Out";
+logoutBtn.addEventListener("click", logout);
+document.getElementById("logoutBtn").appendChild(logoutBtn);
+} else {
+document.getElementById("logoutBtn").innerHTML = "";
+}
+
+
+
+
 document.querySelector("#post-form").addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("clicked");
@@ -25,8 +38,4 @@ document.querySelector("#post-form").addEventListener("submit", function (e) {
               console.log('Error:', error);
           });
       })
-      .catch(error => {
-        console.error('Error retrieving username:', error);
-      });
-
   
