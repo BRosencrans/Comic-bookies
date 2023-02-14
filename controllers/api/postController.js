@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
     title: req.body.title,
     username: req.session.username,
     text: req.body.text,
-    user_id: req.session.user_id})
+    userId: req.session.userId})
     .then(newPost => {
         res.json(newPost)
     }).catch(err => {

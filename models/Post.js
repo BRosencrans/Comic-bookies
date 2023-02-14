@@ -9,7 +9,7 @@ Post.init({
     type: DataTypes.STRING,
   references: {
     model: 'Users',
-    key: 'userName'
+    key: 'username'
   }},
   title: {
     type:  DataTypes.STRING,
