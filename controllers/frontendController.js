@@ -3,13 +3,16 @@ const router= express.Router();
 const bcrypt = require('bcrypt')
 const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
 
-
 router.get("/",(req,res)=>{
     Post.findAll({
-        include:{
-            model:User,
-            as: 'User'
+        include:[
+        {
+            model: Comment,
+            as: "Comment",
+            attributes: ['id', 'post_id', 'userName', 'comment'],
+           
         }
+    ]
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
@@ -122,10 +125,20 @@ router.get('/volumes', (req,res)=>{
     })
     
 })
-
-
-
-
-
+router.get('/post/:id', (req, res) => {
+        Post.findByPk(req.params.id,{
+            include: [
+            {model: Comment,
+                as: 'Comment',
+            attributes: ['id','userName','comment'],
+            }]
+            })
+        .then(onePostData=>{
+            console.log(onePostData)
+            const onePost= onePostData.get()
+            res.render('post', {onePost
+            })
+        })
+});
 module.exports= router;
 
