@@ -26,7 +26,7 @@ router.get('/:id', (req,res)=>{
         res.status(500).json({msg:"aww shucks!", err})
     })
 })
-router.post('/', (req,res)=>{
+router.post('/signup', (req,res)=>{
     console.log(req.body);
     User.create({
         email:req.body.email,

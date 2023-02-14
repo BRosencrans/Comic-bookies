@@ -16,6 +16,7 @@ document.querySelector("#loginForm").addEventListener("submit",e=>{
         console.log(res.status)
         if(res.ok){
            location.href="/"
+           alert('logged in')
         } else {
             alert("username or password are incorrect")
         }
