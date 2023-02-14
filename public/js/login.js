@@ -1,7 +1,7 @@
 document.querySelector("#loginForm").addEventListener("submit",e=>{
     e.preventDefault();
     const loginObj = {
-        email:document.querySelector("#loginEmail").value,
+        username:document.querySelector("#loginUsername").value,
         password:document.querySelector("#loginPassword").value,
     }
     console.log(loginObj)
@@ -13,10 +13,12 @@ document.querySelector("#loginForm").addEventListener("submit",e=>{
             "Content-Type":"application/json"
         }
     }).then(res=>{
+        console.log(res.status)
         if(res.ok){
            location.href="/"
+           alert('logged in')
         } else {
-            alert("username or passward are incorrect")
+            alert("username or password are incorrect")
         }
     })
 })

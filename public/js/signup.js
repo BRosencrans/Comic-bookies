@@ -9,15 +9,16 @@ document.querySelector("#signupForm").addEventListener("submit",e=>{
 
     fetch("/api/users/signup",{
         method:"POST",
-        body:JSON.stringify(signupOnbj),
+        body:JSON.stringify(signupObj),
         headers:{
             "Content-Type":"application/json"
         }
     }).then(res=>{
         if(res.ok){
            location.href="/"
+           alert('account created')
         } else {
-            alert("trumpet sound")
+            alert("nope")
         }
     })
 })

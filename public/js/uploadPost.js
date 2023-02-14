@@ -24,5 +24,3 @@ document.querySelector('#post-form').addEventListener('submit', function (e) {
         console.log('Error:', error);
     });
     })
-  
-    document.querySelector('#')
