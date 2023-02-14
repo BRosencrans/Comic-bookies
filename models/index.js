@@ -9,24 +9,24 @@ const Volume = require('./Volume');
 
 User.hasMany(Post, {
     as:'Post',
-    foreignKey: 'userName'
+    foreignKey: 'username'
 });
 
 User.hasMany(Comment, {
     as: "Comment",
-    foreignKey: 'userName',
+    foreignKey: 'username',
     onDelete: "cascade"
 });
 
 Post.belongsTo(User, {
     as: 'User',
-    foreignKey: 'userName',
+    foreignKey: 'username',
     onDelete: "cascade"
 });
 
 Comment.belongsTo(User, {
     as: 'User',
-    foreignKey: 'userName',
+    foreignKey: 'username',
     onDelete: "cascade"
 });
 
