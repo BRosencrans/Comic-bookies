@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     include:[
     {model: Comment,
         as: "Comment",
-    attributes: ['id','post_id','userName','comment']
+    attributes: ['id','post_id','username','comment']
     }]
     })
     .then(allPosts => res.json(allPosts))

@@ -13,7 +13,6 @@ document.querySelector("#post-form").addEventListener("submit", function (e) {
           },
           body: JSON.stringify({
               title: inputTitle,
-              username: username,
               text: inputText,
          }),
           })
@@ -29,5 +28,5 @@ document.querySelector("#post-form").addEventListener("submit", function (e) {
       .catch(error => {
         console.error('Error retrieving username:', error);
       });
-  });
+
   
