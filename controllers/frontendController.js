@@ -1,19 +1,21 @@
 const express= require('express');
 const router= express.Router();
+const bcrypt = require('bcrypt')
 const {User, Post, Comment, Publisher, Character,Series,Volume} = require('../models');
-
 
 router.get("/",(req,res)=>{
     Post.findAll({
-        include:{
-            model:User,
-            as: 'User'
+        include:[
+        {
+            model: Comment,
+            as: "Comment",
+            attributes: ['id', 'post_id', 'userName', 'comment'],
+           
         }
+    ]
     }).then(postData=>{
         console.log(postData)
         const hbsPost = postData.map(post=>post.toJSON())
-        console.log('==============================')
-        console.log(hbsPost)
         res.render("home",{
             isLoggedIn:req.session.loggedIn,
             userId:req.session.userId,
@@ -22,20 +24,31 @@ router.get("/",(req,res)=>{
     })
 })
 
+router.get('/login', (req, res)=>{
+    res.render('login')
+})
+router.get('/signup', (req,res)=>{
+    res.render('signup')
+})
+router.post("/signup", async (req,res)=>{
+    const {username, password, email} = req.body;
+    if (!username || !password || !email) {
+        return res.status(400).json({error: 'Username, Email and Password are required'});
+    }
+    try{
+        const newUser = await User.create({
+            username,
+            password,
+            email
+        });
+        req.session.loggedIn = true;
+        req.session.userId = newUser.id;
+        return res.redirect('/');
+    } catch(error){
+        return res.status(500).json({ error: 'Error while creating user'})
+    }
+})
 
-router.get("/login",(req,res)=>{
-    if(req.session.loggedIn){
-        return res.redirect('/')
-    }
-    res.render("login",{
-        isLoggedIn:req.session.loggedIn,
-        userId:req.session.userId,
-    }
-    )
-})
-router.get("/signup",(req,res)=>{
-    res.render("signup")
-})
 router.get("/logout",(req,res)=>{
 if (req.session.loggedIn){
     req.session.destroy()
@@ -55,8 +68,6 @@ router.get("/profile",(req,res)=>{
     }).then(userdata=>{
         console.log(userdata)
         const hbsData = userdata.toJSON();
-        console.log('==============================')
-        console.log(hbsData)
         res.render("profile",hbsData)
     })
     // res.redirect("/sessions")
@@ -64,7 +75,7 @@ router.get("/profile",(req,res)=>{
 
 router.get('/publisher', (req,res)=>{
     Publisher.findAll({
-        limit: 10
+        limit: 50
     }).then(publisherData=>{
         console.log(publisherData)
         const hbsPubData = publisherData.map(publisher=>publisher.toJSON())
@@ -77,7 +88,7 @@ router.get('/publisher', (req,res)=>{
 })
 router.get('/characters', (req,res)=>{
     Character.findAll({
-        limit: 10
+        limit: 50
     }).then(characterData=>{
         console.log(characterData)
         const hbsCharData = characterData.map(character=>character.toJSON())
@@ -91,7 +102,7 @@ router.get('/characters', (req,res)=>{
 
 router.get('/series', (req,res)=>{
     Series.findAll({
-        limit: 10
+        limit: 50
     }).then(seriesData=>{
         console.log(seriesData)
         const hbsSeriesData = seriesData.map(series=>series.toJSON())
@@ -103,7 +114,7 @@ router.get('/series', (req,res)=>{
 })
 router.get('/volumes', (req,res)=>{
     Volume.findAll({
-        limit: 10
+        limit: 50
     }).then(volumeData=>{
         console.log(volumeData)
         const hbsVolumeData = volumeData.map(volume=>volume.toJSON())
@@ -113,10 +124,20 @@ router.get('/volumes', (req,res)=>{
     })
     
 })
-
-
-
-
-
+router.get('/post/:id', (req, res) => {
+        Post.findByPk(req.params.id,{
+            include: [
+            {model: Comment,
+                as: 'Comment',
+            attributes: ['id','userName','comment'],
+            }]
+            })
+        .then(onePostData=>{
+            console.log(onePostData)
+            const onePost= onePostData.get()
+            res.render('post', {onePost
+            })
+        })
+});
 module.exports= router;
 

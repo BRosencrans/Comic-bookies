@@ -1,4 +1,4 @@
-document.querySelector('#logoutBtn').addEventListener('click',()=>{
+document.querySelector('#logout').addEventListener('click',()=>{
     fetch('api/user/logout',{
         method: 'POST'
     }).then(res=>{

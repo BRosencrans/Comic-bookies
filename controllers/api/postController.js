@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     include:[
     {model: Comment,
         as: "Comment",
-    attributes: ['id','post_id','userName','comment']
+    attributes: ['id','post_id','username','comment']
     }]
     })
     .then(allPosts => res.json(allPosts))
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
     include: [
     {model: Comment,
         as: 'Comment',
-    attributes: ['id','post_id','userName','comment'],
+    attributes: ['id','post_id','username','comment'],
     }]
     })
     .then(onePost => {
@@ -43,12 +43,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     if(!req.session.userId){
-        return res.status(403).json({msg:"login first!"})
+        alert('log in first!');
+        return res.status(403).json({message:"login first!"});
+      
      }
    //creates new post
     Post.create({
     title: req.body.title,
-    userName: req.session.userName,
+    username: req.session.username,
     text: req.body.text,
     user_id: req.session.user_id})
     .then(newPost => {
