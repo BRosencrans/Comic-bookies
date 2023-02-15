@@ -6,23 +6,23 @@
   <h2 id="title-post">{{title}}</h2>
     <p id="post-text"> {{text}}</p>
     <h3 id="users">by:{{username}} </h3>
+    <img id="post image" src="{{image}}">
 </section>
-<img src="<%= typeof file != 'undefined' ? file : '' %>" id="img">
+
 {{/each}}
 <form action="" id="post-form">
   <h2 id="post-title">New Post</h2>
   <input type="text" placeholder="new post title" id="new-title" required>
   <input type="text" placeholder="new post" id="new-post" required>
+<button id="upload_widget" class="cloudinary-button">Upload files</button>
   <button id="post-button" type="submit"> post </button>
-{{!-- <div data-id="G03luy9hMGDIXk98NPaHf" class="uplomatic" id="new-pic"></div> --}}
-</form>
-<form method="POST" action="/upload" enctype="multipart/form-data">
-  <input type="file" name="image">
-  <input type="submit">
+
 </form>
 
 
 
+
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 
 <script src = "/js/upload.js"></script>
 <script src="/js/uploadPost.js"></script>

@@ -22,6 +22,11 @@ Post.init({
     allowNull: false,
     // validate:{
       // len:[4]
+}, 
+image: {
+  type:DataTypes.STRING,
+  allowNull:true,
+
 }},
    //add media share
 

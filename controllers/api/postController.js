@@ -3,6 +3,8 @@ const router = express.Router();
 const {User, Post, Comment} = require('../../models');
 
 
+
+
 // database routes for the posts
 router.get("/", (req, res) => {
    //finds all posts and attached comments
@@ -52,7 +54,7 @@ router.post('/', (req, res) => {
     title: req.body.title,
     username: req.session.username,
     text: req.body.text,
-    userId: req.session.userId})
+    image: req.body.image})
     .then(newPost => {
         res.json(newPost)
     }).catch(err => {
