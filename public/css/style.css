@@ -83,6 +83,12 @@ footer{
     border-radius: 5px;
 
 }
+#post-button{
+    background-color: darkslateblue;
+    padding:4px;
+    color:aliceblue;
+    border-radius: 5px;
+}
 #posts{
     display: flex;
     flex-direction: column;
@@ -97,7 +103,7 @@ footer{
     color:aliceblue;
 }
 #users{
-    margin-top: 5px;;
+    margin-top: 5px;
     text-align: right;
     color:aliceblue;
 }
@@ -229,7 +235,7 @@ margin-top: 10px;
     border-radius: 15px;
     padding:18px;
     max-width: fit-content;
-    min-width: fit-content;
+    min-width: 350px;
     margin:0 auto;
     margin-top: 35px;
 }
@@ -252,9 +258,7 @@ margin-top: 10px;
     width:200px;
     margin-left: 80px;
 }
-#post-button{
-    width:76px;
-}
+
 #post-button:hover{
    box-shadow: 1px 1px 1px black;
 }
@@ -304,10 +308,8 @@ margin-top: 10px;
     #pubs #chars #series-list #vols-box{
         margin-left: 15vw;
     }
-    #post-form{
-        width: 200px;
-    }
-    #post-title #new-post #post-button #upload_widget{
-        margin:0 auto;
+   
+    #post-button #upload_widget{
+        margin-left:10vw;
     }
 }
