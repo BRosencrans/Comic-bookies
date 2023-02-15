@@ -9,7 +9,7 @@ router.get("/",(req,res)=>{
         {
             model: Comment,
             as: "Comment",
-            attributes: ['id', 'post_id', 'userName', 'comment'],
+            attributes: ['id', 'post_id', 'username', 'comment'],
            
         }
     ]

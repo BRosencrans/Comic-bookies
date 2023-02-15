@@ -13,7 +13,8 @@ header {
     border: solid 2px black;
     height: 40px;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
     background-color: darkslategrey;
     font-size: larger;   
 }
@@ -27,6 +28,7 @@ main {
     margin:0 auto;
     border:solid black 2px;
     background-color: rgb(149, 179, 184);
+    
 }
 footer{
     background-color: darkslategray;
@@ -41,7 +43,7 @@ button{
     width: fit-content;
     background-color: darkslateblue;
     color:aliceblue;
-    padding:3px;
+    padding:5px;
     border-radius: 5px;
     margin-left: 300px;
 }
@@ -63,17 +65,17 @@ button{
     color:aliceblue;
 }
 #upload_widget{
-    margin: 15px;
-    margin-left:55vw;
-    margin-top: 45vh;
-    background-color: darkslategray;
-    border-radius: 15px;
+    margin-top:5px;
+    padding:0;
+    background-color: darkslateblue;
+    border-radius: 5px;
 
 }
 #posts{
     display: flex;
     flex-direction: column;
-    width:fit-content;
+    min-width: fit-content;
+    max-width: 25vw;
     padding:8px;
     margin:25px;
     margin-left: 23vw;
@@ -196,6 +198,7 @@ margin-top: 10px;
     margin-left:18vw;
 }
 #justice{
+    position:relative;
   margin:90px;
   margin-left:220px;
   width: 750px;
@@ -227,10 +230,64 @@ margin-top: 10px;
 #new-title{
     margin:5px;
     width:200px;
-    margin-left: 40px;
+    margin-left: 80px;
 }
 #new-post{
+    display: flex;
+    flex-direction: column;
     margin:5px;
     width:200px;
-    margin-left: 40px;;
+    margin-left: 80px;
+}
+#post-button{
+    width:76px;
+}
+#post-button:hover{
+   box-shadow: 1px 1px 1px black;
+}
+#delete{
+    padding:1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    left:20px;
+    height:fit-content;
+    width:fit-content;
+    background-color:crimson;
+}
+.hide{
+    display:none
+}
+@media  screen and (max-width:1430px) {
+    #justice{
+        width:500px;
+        margin-left: 150px;
+    }
+    #deadpool{
+        width: 400px;
+
+    }
+}
+@media screen and (max-width:950px){
+    #justice{
+        width:300px;
+        margin-left: 100px;
+    }
+    #deadpool{
+        width:300px
+    }
+    #pubs #chars #series-list #vols-box{
+        margin-left: 20vw;
+    }
+}
+@media screen and (max-width:640px){
+    #justice{
+        width:200px;
+        margin-left: 80px;
+    }
+    #deadpool{
+        width:200px;
+    }
+    #pubs #chars #series-list #vols-box{
+        margin-left: 15vw;
+    }
 }
