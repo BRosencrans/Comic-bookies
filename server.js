@@ -41,6 +41,11 @@ const upload = multer({storage: storage})
 
 app.post("/upload", upload.single('image') , (req, res) =>{
    res.send('image uploaded')
+   res.render('home',{
+      msg: "file uploaded",
+      file: `images/${file.file.filename}`
+   })
+
 })
 
 
