@@ -13,7 +13,11 @@
   <input type="text" placeholder="new post title" id="new-title" required>
   <input type="text" placeholder="new post" id="new-post" required>
   <button id="post-button" type="submit"> post </button>
-<div data-id="G03luy9hMGDIXk98NPaHf" class="uplomatic" id="new-pic"></div>
+{{!-- <div data-id="G03luy9hMGDIXk98NPaHf" class="uplomatic" id="new-pic"></div> --}}
+</form>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+  <input type="file" name="image">
+  <input type="submit">
 </form>
 
 
