@@ -10,9 +10,6 @@
 <body>
     <header id="header">
         <a href="/">Home Page</a>
-        {{#if isLoggedIn}}
-            <a href="/profile">Profile</a>
-        {{else}}
             <a href="/login">Log in</a>
             <a href="/signup">Sign up</a>
             <a href="/publisher">Publishers</a>
@@ -20,7 +17,7 @@
             <a href="/series">Series</a>
             <a href="/volumes">Volumes</a>
             <button id="logout">Log Out</button>
-        {{/if}}
+   
     </header>
     <main>
     {{{body}}}
