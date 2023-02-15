@@ -11,10 +11,11 @@ body{
 
 header {
     border: solid 2px black;
-    height: 40px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     background-color: darkslategrey;
     font-size: larger;   
 }
@@ -23,7 +24,7 @@ header a{
 }
 
 main {
-    height: 100vh;
+    height: 100;
     width:70vw;
     margin:0 auto;
     border:solid black 2px;
@@ -77,8 +78,9 @@ button{
     min-width: fit-content;
     max-width: 25vw;
     padding:8px;
-    margin:25px;
-    margin-left: 23vw;
+    margin:0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: darkslategray;
     border-radius: 15px;
     color:aliceblue;
@@ -257,11 +259,9 @@ margin-top: 10px;
 .hide{
     display:none
 }
-#img{
+#psot-image{
     width:50px;
     height:50px;
-    display:block;
-    margin: 0 auto;
 }
 @media  screen and (max-width:1430px) {
     #justice{
@@ -281,7 +281,7 @@ margin-top: 10px;
     #deadpool{
         width:300px
     }
-    #pubs #chars #series-list #vols-box{
+     #pubs #chars #series-list #vols-box{
         margin-left: 20vw;
     }
 }
