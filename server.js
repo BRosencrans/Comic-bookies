@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
 const {User, Post, Comment, Publisher, Character, Volume, Series} = require('./models');
-const multer = require('multer');
+
 
 
 const sess = {
@@ -28,25 +28,6 @@ const sess = {
    })
 };
 
-const storage = multer.diskStorage({
-   destination: (req, file, cb) => {
-      cb(null, "Images")
-   },
-   filename: (req, file, cb) =>{
-      console.log(file)
-      cb(null, Date.now() + path.extname(file.originalname))
-   }
-})
-const upload = multer({storage: storage})
-
-app.post("/upload", upload.single('image') , (req, res) =>{
-   res.send('image uploaded')
-   res.render('home',{
-      msg: "file uploaded",
-      file: `images/${file.file.filename}`
-   })
-
-})
 
 
 
