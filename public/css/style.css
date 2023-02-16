@@ -102,6 +102,9 @@ footer{
     border-radius: 15px;
     color:aliceblue;
 }
+#post-image{
+    max-width: 500px;
+}
 #users{
     margin-top: 5px;
     text-align: right;
